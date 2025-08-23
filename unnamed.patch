@@ -1,0 +1,1127 @@
+Index: app/build/generated/source/kapt/debug/com/jorge/gymtracker/data/db/AppDb_Impl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/jorge/gymtracker/data/db/AppDb_Impl.java b/app/build/generated/source/kapt/debug/com/jorge/gymtracker/data/db/AppDb_Impl.java
+new file mode 100644
+--- /dev/null	(date 1755944868550)
++++ b/app/build/generated/source/kapt/debug/com/jorge/gymtracker/data/db/AppDb_Impl.java	(date 1755944868550)
+@@ -0,0 +1,232 @@
++package com.jorge.gymtracker.data.db;
++
++import androidx.annotation.NonNull;
++import androidx.room.DatabaseConfiguration;
++import androidx.room.InvalidationTracker;
++import androidx.room.RoomDatabase;
++import androidx.room.RoomOpenHelper;
++import androidx.room.migration.AutoMigrationSpec;
++import androidx.room.migration.Migration;
++import androidx.room.util.DBUtil;
++import androidx.room.util.TableInfo;
++import androidx.sqlite.db.SupportSQLiteDatabase;
++import androidx.sqlite.db.SupportSQLiteOpenHelper;
++import com.jorge.gymtracker.data.dao.ExerciseDao;
++import com.jorge.gymtracker.data.dao.ExerciseDao_Impl;
++import com.jorge.gymtracker.data.dao.WorkoutDao;
++import com.jorge.gymtracker.data.dao.WorkoutDao_Impl;
++import java.lang.Class;
++import java.lang.Override;
++import java.lang.String;
++import java.lang.SuppressWarnings;
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.HashSet;
++import java.util.List;
++import java.util.Map;
++import java.util.Set;
++import javax.annotation.processing.Generated;
++
++@Generated("androidx.room.RoomProcessor")
++@SuppressWarnings({"unchecked", "deprecation"})
++public final class AppDb_Impl extends AppDb {
++  private volatile ExerciseDao _exerciseDao;
++
++  private volatile WorkoutDao _workoutDao;
++
++  @Override
++  @NonNull
++  protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
++    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(4) {
++      @Override
++      public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
++        db.execSQL("CREATE TABLE IF NOT EXISTS `exercise` (`id` INTEGER NOT NULL, `name` TEXT NOT NULL, `primaryMuscle` TEXT NOT NULL, `secondaryMuscles` TEXT NOT NULL, `equipment` TEXT, `mechanics` TEXT, `difficulty` TEXT, `aliases` TEXT NOT NULL, `tags` TEXT NOT NULL, PRIMARY KEY(`id`))");
++        db.execSQL("CREATE TABLE IF NOT EXISTS `workout_session` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `date` INTEGER NOT NULL, `title` TEXT NOT NULL)");
++        db.execSQL("CREATE TABLE IF NOT EXISTS `workout_set` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sessionId` INTEGER NOT NULL, `exerciseId` INTEGER NOT NULL, `exerciseName` TEXT NOT NULL, `reps` INTEGER NOT NULL, `weight` REAL NOT NULL)");
++        db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
++        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1fad2c92c6d5e19b9eeb36f9281c2c93')");
++      }
++
++      @Override
++      public void dropAllTables(@NonNull final SupportSQLiteDatabase db) {
++        db.execSQL("DROP TABLE IF EXISTS `exercise`");
++        db.execSQL("DROP TABLE IF EXISTS `workout_session`");
++        db.execSQL("DROP TABLE IF EXISTS `workout_set`");
++        final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
++        if (_callbacks != null) {
++          for (RoomDatabase.Callback _callback : _callbacks) {
++            _callback.onDestructiveMigration(db);
++          }
++        }
++      }
++
++      @Override
++      public void onCreate(@NonNull final SupportSQLiteDatabase db) {
++        final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
++        if (_callbacks != null) {
++          for (RoomDatabase.Callback _callback : _callbacks) {
++            _callback.onCreate(db);
++          }
++        }
++      }
++
++      @Override
++      public void onOpen(@NonNull final SupportSQLiteDatabase db) {
++        mDatabase = db;
++        internalInitInvalidationTracker(db);
++        final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
++        if (_callbacks != null) {
++          for (RoomDatabase.Callback _callback : _callbacks) {
++            _callback.onOpen(db);
++          }
++        }
++      }
++
++      @Override
++      public void onPreMigrate(@NonNull final SupportSQLiteDatabase db) {
++        DBUtil.dropFtsSyncTriggers(db);
++      }
++
++      @Override
++      public void onPostMigrate(@NonNull final SupportSQLiteDatabase db) {
++      }
++
++      @Override
++      @NonNull
++      public RoomOpenHelper.ValidationResult onValidateSchema(
++          @NonNull final SupportSQLiteDatabase db) {
++        final HashMap<String, TableInfo.Column> _columnsExercise = new HashMap<String, TableInfo.Column>(9);
++        _columnsExercise.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsExercise.put("name", new TableInfo.Column("name", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsExercise.put("primaryMuscle", new TableInfo.Column("primaryMuscle", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsExercise.put("secondaryMuscles", new TableInfo.Column("secondaryMuscles", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsExercise.put("equipment", new TableInfo.Column("equipment", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsExercise.put("mechanics", new TableInfo.Column("mechanics", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsExercise.put("difficulty", new TableInfo.Column("difficulty", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsExercise.put("aliases", new TableInfo.Column("aliases", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsExercise.put("tags", new TableInfo.Column("tags", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        final HashSet<TableInfo.ForeignKey> _foreignKeysExercise = new HashSet<TableInfo.ForeignKey>(0);
++        final HashSet<TableInfo.Index> _indicesExercise = new HashSet<TableInfo.Index>(0);
++        final TableInfo _infoExercise = new TableInfo("exercise", _columnsExercise, _foreignKeysExercise, _indicesExercise);
++        final TableInfo _existingExercise = TableInfo.read(db, "exercise");
++        if (!_infoExercise.equals(_existingExercise)) {
++          return new RoomOpenHelper.ValidationResult(false, "exercise(com.jorge.gymtracker.data.entity.ExerciseEntity).\n"
++                  + " Expected:\n" + _infoExercise + "\n"
++                  + " Found:\n" + _existingExercise);
++        }
++        final HashMap<String, TableInfo.Column> _columnsWorkoutSession = new HashMap<String, TableInfo.Column>(3);
++        _columnsWorkoutSession.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsWorkoutSession.put("date", new TableInfo.Column("date", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsWorkoutSession.put("title", new TableInfo.Column("title", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        final HashSet<TableInfo.ForeignKey> _foreignKeysWorkoutSession = new HashSet<TableInfo.ForeignKey>(0);
++        final HashSet<TableInfo.Index> _indicesWorkoutSession = new HashSet<TableInfo.Index>(0);
++        final TableInfo _infoWorkoutSession = new TableInfo("workout_session", _columnsWorkoutSession, _foreignKeysWorkoutSession, _indicesWorkoutSession);
++        final TableInfo _existingWorkoutSession = TableInfo.read(db, "workout_session");
++        if (!_infoWorkoutSession.equals(_existingWorkoutSession)) {
++          return new RoomOpenHelper.ValidationResult(false, "workout_session(com.jorge.gymtracker.data.entity.WorkoutSessionEntity).\n"
++                  + " Expected:\n" + _infoWorkoutSession + "\n"
++                  + " Found:\n" + _existingWorkoutSession);
++        }
++        final HashMap<String, TableInfo.Column> _columnsWorkoutSet = new HashMap<String, TableInfo.Column>(6);
++        _columnsWorkoutSet.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsWorkoutSet.put("sessionId", new TableInfo.Column("sessionId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsWorkoutSet.put("exerciseId", new TableInfo.Column("exerciseId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsWorkoutSet.put("exerciseName", new TableInfo.Column("exerciseName", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsWorkoutSet.put("reps", new TableInfo.Column("reps", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsWorkoutSet.put("weight", new TableInfo.Column("weight", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        final HashSet<TableInfo.ForeignKey> _foreignKeysWorkoutSet = new HashSet<TableInfo.ForeignKey>(0);
++        final HashSet<TableInfo.Index> _indicesWorkoutSet = new HashSet<TableInfo.Index>(0);
++        final TableInfo _infoWorkoutSet = new TableInfo("workout_set", _columnsWorkoutSet, _foreignKeysWorkoutSet, _indicesWorkoutSet);
++        final TableInfo _existingWorkoutSet = TableInfo.read(db, "workout_set");
++        if (!_infoWorkoutSet.equals(_existingWorkoutSet)) {
++          return new RoomOpenHelper.ValidationResult(false, "workout_set(com.jorge.gymtracker.data.entity.WorkoutSetEntity).\n"
++                  + " Expected:\n" + _infoWorkoutSet + "\n"
++                  + " Found:\n" + _existingWorkoutSet);
++        }
++        return new RoomOpenHelper.ValidationResult(true, null);
++      }
++    }, "1fad2c92c6d5e19b9eeb36f9281c2c93", "b9aa93e4dae105a13d46686edf17cd39");
++    final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
++    final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
++    return _helper;
++  }
++
++  @Override
++  @NonNull
++  protected InvalidationTracker createInvalidationTracker() {
++    final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
++    final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
++    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "exercise","workout_session","workout_set");
++  }
++
++  @Override
++  public void clearAllTables() {
++    super.assertNotMainThread();
++    final SupportSQLiteDatabase _db = super.getOpenHelper().getWritableDatabase();
++    try {
++      super.beginTransaction();
++      _db.execSQL("DELETE FROM `exercise`");
++      _db.execSQL("DELETE FROM `workout_session`");
++      _db.execSQL("DELETE FROM `workout_set`");
++      super.setTransactionSuccessful();
++    } finally {
++      super.endTransaction();
++      _db.query("PRAGMA wal_checkpoint(FULL)").close();
++      if (!_db.inTransaction()) {
++        _db.execSQL("VACUUM");
++      }
++    }
++  }
++
++  @Override
++  @NonNull
++  protected Map<Class<?>, List<Class<?>>> getRequiredTypeConverters() {
++    final HashMap<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
++    _typeConvertersMap.put(ExerciseDao.class, ExerciseDao_Impl.getRequiredConverters());
++    _typeConvertersMap.put(WorkoutDao.class, WorkoutDao_Impl.getRequiredConverters());
++    return _typeConvertersMap;
++  }
++
++  @Override
++  @NonNull
++  public Set<Class<? extends AutoMigrationSpec>> getRequiredAutoMigrationSpecs() {
++    final HashSet<Class<? extends AutoMigrationSpec>> _autoMigrationSpecsSet = new HashSet<Class<? extends AutoMigrationSpec>>();
++    return _autoMigrationSpecsSet;
++  }
++
++  @Override
++  @NonNull
++  public List<Migration> getAutoMigrations(
++      @NonNull final Map<Class<? extends AutoMigrationSpec>, AutoMigrationSpec> autoMigrationSpecs) {
++    final List<Migration> _autoMigrations = new ArrayList<Migration>();
++    return _autoMigrations;
++  }
++
++  @Override
++  public ExerciseDao exerciseDao() {
++    if (_exerciseDao != null) {
++      return _exerciseDao;
++    } else {
++      synchronized(this) {
++        if(_exerciseDao == null) {
++          _exerciseDao = new ExerciseDao_Impl(this);
++        }
++        return _exerciseDao;
++      }
++    }
++  }
++
++  @Override
++  public WorkoutDao workoutDao() {
++    if (_workoutDao != null) {
++      return _workoutDao;
++    } else {
++      synchronized(this) {
++        if(_workoutDao == null) {
++          _workoutDao = new WorkoutDao_Impl(this);
++        }
++        return _workoutDao;
++      }
++    }
++  }
++}
+Index: app/build/generated/source/kapt/debug/com/jorge/gymtracker/data/dao/WorkoutDao_Impl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/jorge/gymtracker/data/dao/WorkoutDao_Impl.java b/app/build/generated/source/kapt/debug/com/jorge/gymtracker/data/dao/WorkoutDao_Impl.java
+new file mode 100644
+--- /dev/null	(date 1755944868525)
++++ b/app/build/generated/source/kapt/debug/com/jorge/gymtracker/data/dao/WorkoutDao_Impl.java	(date 1755944868525)
+@@ -0,0 +1,405 @@
++package com.jorge.gymtracker.data.dao;
++
++import android.database.Cursor;
++import android.os.CancellationSignal;
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
++import androidx.collection.LongSparseArray;
++import androidx.room.CoroutinesRoom;
++import androidx.room.EntityInsertionAdapter;
++import androidx.room.RoomDatabase;
++import androidx.room.RoomDatabaseKt;
++import androidx.room.RoomSQLiteQuery;
++import androidx.room.SharedSQLiteStatement;
++import androidx.room.util.CursorUtil;
++import androidx.room.util.DBUtil;
++import androidx.room.util.RelationUtil;
++import androidx.room.util.StringUtil;
++import androidx.sqlite.db.SupportSQLiteStatement;
++import com.jorge.gymtracker.data.entity.SessionWithSets;
++import com.jorge.gymtracker.data.entity.WorkoutSessionEntity;
++import com.jorge.gymtracker.data.entity.WorkoutSetEntity;
++import java.lang.Class;
++import java.lang.Exception;
++import java.lang.Long;
++import java.lang.Object;
++import java.lang.Override;
++import java.lang.String;
++import java.lang.StringBuilder;
++import java.lang.SuppressWarnings;
++import java.util.ArrayList;
++import java.util.Collections;
++import java.util.List;
++import java.util.concurrent.Callable;
++import javax.annotation.processing.Generated;
++import kotlin.Unit;
++import kotlin.coroutines.Continuation;
++
++@Generated("androidx.room.RoomProcessor")
++@SuppressWarnings({"unchecked", "deprecation"})
++public final class WorkoutDao_Impl implements WorkoutDao {
++  private final RoomDatabase __db;
++
++  private final EntityInsertionAdapter<WorkoutSessionEntity> __insertionAdapterOfWorkoutSessionEntity;
++
++  private final EntityInsertionAdapter<WorkoutSetEntity> __insertionAdapterOfWorkoutSetEntity;
++
++  private final SharedSQLiteStatement __preparedStmtOfDeleteSetsBySessionId;
++
++  private final SharedSQLiteStatement __preparedStmtOfDeleteSession;
++
++  public WorkoutDao_Impl(@NonNull final RoomDatabase __db) {
++    this.__db = __db;
++    this.__insertionAdapterOfWorkoutSessionEntity = new EntityInsertionAdapter<WorkoutSessionEntity>(__db) {
++      @Override
++      @NonNull
++      protected String createQuery() {
++        return "INSERT OR REPLACE INTO `workout_session` (`id`,`date`,`title`) VALUES (nullif(?, 0),?,?)";
++      }
++
++      @Override
++      protected void bind(@NonNull final SupportSQLiteStatement statement,
++          @NonNull final WorkoutSessionEntity entity) {
++        statement.bindLong(1, entity.getId());
++        statement.bindLong(2, entity.getDate());
++        if (entity.getTitle() == null) {
++          statement.bindNull(3);
++        } else {
++          statement.bindString(3, entity.getTitle());
++        }
++      }
++    };
++    this.__insertionAdapterOfWorkoutSetEntity = new EntityInsertionAdapter<WorkoutSetEntity>(__db) {
++      @Override
++      @NonNull
++      protected String createQuery() {
++        return "INSERT OR REPLACE INTO `workout_set` (`id`,`sessionId`,`exerciseId`,`exerciseName`,`reps`,`weight`) VALUES (nullif(?, 0),?,?,?,?,?)";
++      }
++
++      @Override
++      protected void bind(@NonNull final SupportSQLiteStatement statement,
++          @NonNull final WorkoutSetEntity entity) {
++        statement.bindLong(1, entity.getId());
++        statement.bindLong(2, entity.getSessionId());
++        statement.bindLong(3, entity.getExerciseId());
++        if (entity.getExerciseName() == null) {
++          statement.bindNull(4);
++        } else {
++          statement.bindString(4, entity.getExerciseName());
++        }
++        statement.bindLong(5, entity.getReps());
++        statement.bindDouble(6, entity.getWeight());
++      }
++    };
++    this.__preparedStmtOfDeleteSetsBySessionId = new SharedSQLiteStatement(__db) {
++      @Override
++      @NonNull
++      public String createQuery() {
++        final String _query = "DELETE FROM workout_set WHERE sessionId = ?";
++        return _query;
++      }
++    };
++    this.__preparedStmtOfDeleteSession = new SharedSQLiteStatement(__db) {
++      @Override
++      @NonNull
++      public String createQuery() {
++        final String _query = "DELETE FROM workout_session WHERE id = ?";
++        return _query;
++      }
++    };
++  }
++
++  @Override
++  public Object insertSession(final WorkoutSessionEntity session,
++      final Continuation<? super Long> $completion) {
++    return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
++      @Override
++      @NonNull
++      public Long call() throws Exception {
++        __db.beginTransaction();
++        try {
++          final Long _result = __insertionAdapterOfWorkoutSessionEntity.insertAndReturnId(session);
++          __db.setTransactionSuccessful();
++          return _result;
++        } finally {
++          __db.endTransaction();
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Object insertSets(final List<WorkoutSetEntity> sets,
++      final Continuation<? super Unit> $completion) {
++    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
++      @Override
++      @NonNull
++      public Unit call() throws Exception {
++        __db.beginTransaction();
++        try {
++          __insertionAdapterOfWorkoutSetEntity.insert(sets);
++          __db.setTransactionSuccessful();
++          return Unit.INSTANCE;
++        } finally {
++          __db.endTransaction();
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Object deleteSessionWithSets(final long sessionId,
++      final Continuation<? super Unit> $completion) {
++    return RoomDatabaseKt.withTransaction(__db, (__cont) -> WorkoutDao.DefaultImpls.deleteSessionWithSets(WorkoutDao_Impl.this, sessionId, __cont), $completion);
++  }
++
++  @Override
++  public Object deleteSetsBySessionId(final long sessionId,
++      final Continuation<? super Unit> $completion) {
++    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
++      @Override
++      @NonNull
++      public Unit call() throws Exception {
++        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteSetsBySessionId.acquire();
++        int _argIndex = 1;
++        _stmt.bindLong(_argIndex, sessionId);
++        try {
++          __db.beginTransaction();
++          try {
++            _stmt.executeUpdateDelete();
++            __db.setTransactionSuccessful();
++            return Unit.INSTANCE;
++          } finally {
++            __db.endTransaction();
++          }
++        } finally {
++          __preparedStmtOfDeleteSetsBySessionId.release(_stmt);
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Object deleteSession(final long sessionId, final Continuation<? super Unit> $completion) {
++    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
++      @Override
++      @NonNull
++      public Unit call() throws Exception {
++        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteSession.acquire();
++        int _argIndex = 1;
++        _stmt.bindLong(_argIndex, sessionId);
++        try {
++          __db.beginTransaction();
++          try {
++            _stmt.executeUpdateDelete();
++            __db.setTransactionSuccessful();
++            return Unit.INSTANCE;
++          } finally {
++            __db.endTransaction();
++          }
++        } finally {
++          __preparedStmtOfDeleteSession.release(_stmt);
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Object getHistoryWithSets(final Continuation<? super List<SessionWithSets>> $completion) {
++    final String _sql = "SELECT * FROM workout_session ORDER BY date DESC";
++    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
++    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
++    return CoroutinesRoom.execute(__db, true, _cancellationSignal, new Callable<List<SessionWithSets>>() {
++      @Override
++      @NonNull
++      public List<SessionWithSets> call() throws Exception {
++        __db.beginTransaction();
++        try {
++          final Cursor _cursor = DBUtil.query(__db, _statement, true, null);
++          try {
++            final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
++            final int _cursorIndexOfDate = CursorUtil.getColumnIndexOrThrow(_cursor, "date");
++            final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
++            final LongSparseArray<ArrayList<WorkoutSetEntity>> _collectionSets = new LongSparseArray<ArrayList<WorkoutSetEntity>>();
++            while (_cursor.moveToNext()) {
++              final long _tmpKey;
++              _tmpKey = _cursor.getLong(_cursorIndexOfId);
++              if (!_collectionSets.containsKey(_tmpKey)) {
++                _collectionSets.put(_tmpKey, new ArrayList<WorkoutSetEntity>());
++              }
++            }
++            _cursor.moveToPosition(-1);
++            __fetchRelationshipworkoutSetAscomJorgeGymtrackerDataEntityWorkoutSetEntity(_collectionSets);
++            final List<SessionWithSets> _result = new ArrayList<SessionWithSets>(_cursor.getCount());
++            while (_cursor.moveToNext()) {
++              final SessionWithSets _item;
++              final WorkoutSessionEntity _tmpSession;
++              final long _tmpId;
++              _tmpId = _cursor.getLong(_cursorIndexOfId);
++              final long _tmpDate;
++              _tmpDate = _cursor.getLong(_cursorIndexOfDate);
++              final String _tmpTitle;
++              if (_cursor.isNull(_cursorIndexOfTitle)) {
++                _tmpTitle = null;
++              } else {
++                _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
++              }
++              _tmpSession = new WorkoutSessionEntity(_tmpId,_tmpDate,_tmpTitle);
++              final ArrayList<WorkoutSetEntity> _tmpSetsCollection;
++              final long _tmpKey_1;
++              _tmpKey_1 = _cursor.getLong(_cursorIndexOfId);
++              _tmpSetsCollection = _collectionSets.get(_tmpKey_1);
++              _item = new SessionWithSets(_tmpSession,_tmpSetsCollection);
++              _result.add(_item);
++            }
++            __db.setTransactionSuccessful();
++            return _result;
++          } finally {
++            _cursor.close();
++            _statement.release();
++          }
++        } finally {
++          __db.endTransaction();
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Object getSessionWithSets(final long id,
++      final Continuation<? super SessionWithSets> $completion) {
++    final String _sql = "SELECT * FROM workout_session WHERE id = ? LIMIT 1";
++    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
++    int _argIndex = 1;
++    _statement.bindLong(_argIndex, id);
++    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
++    return CoroutinesRoom.execute(__db, true, _cancellationSignal, new Callable<SessionWithSets>() {
++      @Override
++      @Nullable
++      public SessionWithSets call() throws Exception {
++        __db.beginTransaction();
++        try {
++          final Cursor _cursor = DBUtil.query(__db, _statement, true, null);
++          try {
++            final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
++            final int _cursorIndexOfDate = CursorUtil.getColumnIndexOrThrow(_cursor, "date");
++            final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
++            final LongSparseArray<ArrayList<WorkoutSetEntity>> _collectionSets = new LongSparseArray<ArrayList<WorkoutSetEntity>>();
++            while (_cursor.moveToNext()) {
++              final long _tmpKey;
++              _tmpKey = _cursor.getLong(_cursorIndexOfId);
++              if (!_collectionSets.containsKey(_tmpKey)) {
++                _collectionSets.put(_tmpKey, new ArrayList<WorkoutSetEntity>());
++              }
++            }
++            _cursor.moveToPosition(-1);
++            __fetchRelationshipworkoutSetAscomJorgeGymtrackerDataEntityWorkoutSetEntity(_collectionSets);
++            final SessionWithSets _result;
++            if (_cursor.moveToFirst()) {
++              final WorkoutSessionEntity _tmpSession;
++              final long _tmpId;
++              _tmpId = _cursor.getLong(_cursorIndexOfId);
++              final long _tmpDate;
++              _tmpDate = _cursor.getLong(_cursorIndexOfDate);
++              final String _tmpTitle;
++              if (_cursor.isNull(_cursorIndexOfTitle)) {
++                _tmpTitle = null;
++              } else {
++                _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
++              }
++              _tmpSession = new WorkoutSessionEntity(_tmpId,_tmpDate,_tmpTitle);
++              final ArrayList<WorkoutSetEntity> _tmpSetsCollection;
++              final long _tmpKey_1;
++              _tmpKey_1 = _cursor.getLong(_cursorIndexOfId);
++              _tmpSetsCollection = _collectionSets.get(_tmpKey_1);
++              _result = new SessionWithSets(_tmpSession,_tmpSetsCollection);
++            } else {
++              _result = null;
++            }
++            __db.setTransactionSuccessful();
++            return _result;
++          } finally {
++            _cursor.close();
++            _statement.release();
++          }
++        } finally {
++          __db.endTransaction();
++        }
++      }
++    }, $completion);
++  }
++
++  @NonNull
++  public static List<Class<?>> getRequiredConverters() {
++    return Collections.emptyList();
++  }
++
++  private void __fetchRelationshipworkoutSetAscomJorgeGymtrackerDataEntityWorkoutSetEntity(
++      @NonNull final LongSparseArray<ArrayList<WorkoutSetEntity>> _map) {
++    if (_map.isEmpty()) {
++      return;
++    }
++    if (_map.size() > RoomDatabase.MAX_BIND_PARAMETER_CNT) {
++      RelationUtil.recursiveFetchLongSparseArray(_map, true, (map) -> {
++        __fetchRelationshipworkoutSetAscomJorgeGymtrackerDataEntityWorkoutSetEntity(map);
++        return Unit.INSTANCE;
++      });
++      return;
++    }
++    final StringBuilder _stringBuilder = StringUtil.newStringBuilder();
++    _stringBuilder.append("SELECT `id`,`sessionId`,`exerciseId`,`exerciseName`,`reps`,`weight` FROM `workout_set` WHERE `sessionId` IN (");
++    final int _inputSize = _map.size();
++    StringUtil.appendPlaceholders(_stringBuilder, _inputSize);
++    _stringBuilder.append(")");
++    final String _sql = _stringBuilder.toString();
++    final int _argCount = 0 + _inputSize;
++    final RoomSQLiteQuery _stmt = RoomSQLiteQuery.acquire(_sql, _argCount);
++    int _argIndex = 1;
++    for (int i = 0; i < _map.size(); i++) {
++      final long _item = _map.keyAt(i);
++      _stmt.bindLong(_argIndex, _item);
++      _argIndex++;
++    }
++    final Cursor _cursor = DBUtil.query(__db, _stmt, false, null);
++    try {
++      final int _itemKeyIndex = CursorUtil.getColumnIndex(_cursor, "sessionId");
++      if (_itemKeyIndex == -1) {
++        return;
++      }
++      final int _cursorIndexOfId = 0;
++      final int _cursorIndexOfSessionId = 1;
++      final int _cursorIndexOfExerciseId = 2;
++      final int _cursorIndexOfExerciseName = 3;
++      final int _cursorIndexOfReps = 4;
++      final int _cursorIndexOfWeight = 5;
++      while (_cursor.moveToNext()) {
++        final long _tmpKey;
++        _tmpKey = _cursor.getLong(_itemKeyIndex);
++        final ArrayList<WorkoutSetEntity> _tmpRelation = _map.get(_tmpKey);
++        if (_tmpRelation != null) {
++          final WorkoutSetEntity _item_1;
++          final long _tmpId;
++          _tmpId = _cursor.getLong(_cursorIndexOfId);
++          final long _tmpSessionId;
++          _tmpSessionId = _cursor.getLong(_cursorIndexOfSessionId);
++          final int _tmpExerciseId;
++          _tmpExerciseId = _cursor.getInt(_cursorIndexOfExerciseId);
++          final String _tmpExerciseName;
++          if (_cursor.isNull(_cursorIndexOfExerciseName)) {
++            _tmpExerciseName = null;
++          } else {
++            _tmpExerciseName = _cursor.getString(_cursorIndexOfExerciseName);
++          }
++          final int _tmpReps;
++          _tmpReps = _cursor.getInt(_cursorIndexOfReps);
++          final double _tmpWeight;
++          _tmpWeight = _cursor.getDouble(_cursorIndexOfWeight);
++          _item_1 = new WorkoutSetEntity(_tmpId,_tmpSessionId,_tmpExerciseId,_tmpExerciseName,_tmpReps,_tmpWeight);
++          _tmpRelation.add(_item_1);
++        }
++      }
++    } finally {
++      _cursor.close();
++    }
++  }
++}
+Index: app/build/generated/source/kapt/debug/com/jorge/gymtracker/data/dao/ExerciseDao_Impl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/jorge/gymtracker/data/dao/ExerciseDao_Impl.java b/app/build/generated/source/kapt/debug/com/jorge/gymtracker/data/dao/ExerciseDao_Impl.java
+new file mode 100644
+--- /dev/null	(date 1755944868502)
++++ b/app/build/generated/source/kapt/debug/com/jorge/gymtracker/data/dao/ExerciseDao_Impl.java	(date 1755944868502)
+@@ -0,0 +1,460 @@
++package com.jorge.gymtracker.data.dao;
++
++import android.database.Cursor;
++import android.os.CancellationSignal;
++import androidx.annotation.NonNull;
++import androidx.room.CoroutinesRoom;
++import androidx.room.EntityInsertionAdapter;
++import androidx.room.RoomDatabase;
++import androidx.room.RoomSQLiteQuery;
++import androidx.room.util.CursorUtil;
++import androidx.room.util.DBUtil;
++import androidx.room.util.StringUtil;
++import androidx.sqlite.db.SupportSQLiteStatement;
++import com.jorge.gymtracker.data.db.Converters;
++import com.jorge.gymtracker.data.entity.ExerciseEntity;
++import java.lang.Class;
++import java.lang.Exception;
++import java.lang.Integer;
++import java.lang.Object;
++import java.lang.Override;
++import java.lang.String;
++import java.lang.StringBuilder;
++import java.lang.SuppressWarnings;
++import java.util.ArrayList;
++import java.util.Collections;
++import java.util.List;
++import java.util.concurrent.Callable;
++import javax.annotation.processing.Generated;
++import kotlin.Unit;
++import kotlin.coroutines.Continuation;
++
++@Generated("androidx.room.RoomProcessor")
++@SuppressWarnings({"unchecked", "deprecation"})
++public final class ExerciseDao_Impl implements ExerciseDao {
++  private final RoomDatabase __db;
++
++  private final EntityInsertionAdapter<ExerciseEntity> __insertionAdapterOfExerciseEntity;
++
++  public ExerciseDao_Impl(@NonNull final RoomDatabase __db) {
++    this.__db = __db;
++    this.__insertionAdapterOfExerciseEntity = new EntityInsertionAdapter<ExerciseEntity>(__db) {
++      @Override
++      @NonNull
++      protected String createQuery() {
++        return "INSERT OR REPLACE INTO `exercise` (`id`,`name`,`primaryMuscle`,`secondaryMuscles`,`equipment`,`mechanics`,`difficulty`,`aliases`,`tags`) VALUES (?,?,?,?,?,?,?,?,?)";
++      }
++
++      @Override
++      protected void bind(@NonNull final SupportSQLiteStatement statement,
++          @NonNull final ExerciseEntity entity) {
++        statement.bindLong(1, entity.getId());
++        if (entity.getName() == null) {
++          statement.bindNull(2);
++        } else {
++          statement.bindString(2, entity.getName());
++        }
++        if (entity.getPrimaryMuscle() == null) {
++          statement.bindNull(3);
++        } else {
++          statement.bindString(3, entity.getPrimaryMuscle());
++        }
++        final String _tmp = Converters.INSTANCE.fromStringList(entity.getSecondaryMuscles());
++        if (_tmp == null) {
++          statement.bindNull(4);
++        } else {
++          statement.bindString(4, _tmp);
++        }
++        if (entity.getEquipment() == null) {
++          statement.bindNull(5);
++        } else {
++          statement.bindString(5, entity.getEquipment());
++        }
++        if (entity.getMechanics() == null) {
++          statement.bindNull(6);
++        } else {
++          statement.bindString(6, entity.getMechanics());
++        }
++        if (entity.getDifficulty() == null) {
++          statement.bindNull(7);
++        } else {
++          statement.bindString(7, entity.getDifficulty());
++        }
++        final String _tmp_1 = Converters.INSTANCE.fromStringList(entity.getAliases());
++        if (_tmp_1 == null) {
++          statement.bindNull(8);
++        } else {
++          statement.bindString(8, _tmp_1);
++        }
++        final String _tmp_2 = Converters.INSTANCE.fromStringList(entity.getTags());
++        if (_tmp_2 == null) {
++          statement.bindNull(9);
++        } else {
++          statement.bindString(9, _tmp_2);
++        }
++      }
++    };
++  }
++
++  @Override
++  public Object insertAll(final List<ExerciseEntity> list,
++      final Continuation<? super Unit> $completion) {
++    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
++      @Override
++      @NonNull
++      public Unit call() throws Exception {
++        __db.beginTransaction();
++        try {
++          __insertionAdapterOfExerciseEntity.insert(list);
++          __db.setTransactionSuccessful();
++          return Unit.INSTANCE;
++        } finally {
++          __db.endTransaction();
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Object count(final Continuation<? super Integer> $completion) {
++    final String _sql = "SELECT COUNT(*) FROM exercise";
++    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
++    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
++    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<Integer>() {
++      @Override
++      @NonNull
++      public Integer call() throws Exception {
++        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
++        try {
++          final Integer _result;
++          if (_cursor.moveToFirst()) {
++            final Integer _tmp;
++            if (_cursor.isNull(0)) {
++              _tmp = null;
++            } else {
++              _tmp = _cursor.getInt(0);
++            }
++            _result = _tmp;
++          } else {
++            _result = null;
++          }
++          return _result;
++        } finally {
++          _cursor.close();
++          _statement.release();
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Object getAll(final Continuation<? super List<ExerciseEntity>> $completion) {
++    final String _sql = "SELECT * FROM exercise ORDER BY name";
++    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
++    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
++    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<ExerciseEntity>>() {
++      @Override
++      @NonNull
++      public List<ExerciseEntity> call() throws Exception {
++        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
++        try {
++          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
++          final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
++          final int _cursorIndexOfPrimaryMuscle = CursorUtil.getColumnIndexOrThrow(_cursor, "primaryMuscle");
++          final int _cursorIndexOfSecondaryMuscles = CursorUtil.getColumnIndexOrThrow(_cursor, "secondaryMuscles");
++          final int _cursorIndexOfEquipment = CursorUtil.getColumnIndexOrThrow(_cursor, "equipment");
++          final int _cursorIndexOfMechanics = CursorUtil.getColumnIndexOrThrow(_cursor, "mechanics");
++          final int _cursorIndexOfDifficulty = CursorUtil.getColumnIndexOrThrow(_cursor, "difficulty");
++          final int _cursorIndexOfAliases = CursorUtil.getColumnIndexOrThrow(_cursor, "aliases");
++          final int _cursorIndexOfTags = CursorUtil.getColumnIndexOrThrow(_cursor, "tags");
++          final List<ExerciseEntity> _result = new ArrayList<ExerciseEntity>(_cursor.getCount());
++          while (_cursor.moveToNext()) {
++            final ExerciseEntity _item;
++            final int _tmpId;
++            _tmpId = _cursor.getInt(_cursorIndexOfId);
++            final String _tmpName;
++            if (_cursor.isNull(_cursorIndexOfName)) {
++              _tmpName = null;
++            } else {
++              _tmpName = _cursor.getString(_cursorIndexOfName);
++            }
++            final String _tmpPrimaryMuscle;
++            if (_cursor.isNull(_cursorIndexOfPrimaryMuscle)) {
++              _tmpPrimaryMuscle = null;
++            } else {
++              _tmpPrimaryMuscle = _cursor.getString(_cursorIndexOfPrimaryMuscle);
++            }
++            final List<String> _tmpSecondaryMuscles;
++            final String _tmp;
++            if (_cursor.isNull(_cursorIndexOfSecondaryMuscles)) {
++              _tmp = null;
++            } else {
++              _tmp = _cursor.getString(_cursorIndexOfSecondaryMuscles);
++            }
++            _tmpSecondaryMuscles = Converters.INSTANCE.toStringList(_tmp);
++            final String _tmpEquipment;
++            if (_cursor.isNull(_cursorIndexOfEquipment)) {
++              _tmpEquipment = null;
++            } else {
++              _tmpEquipment = _cursor.getString(_cursorIndexOfEquipment);
++            }
++            final String _tmpMechanics;
++            if (_cursor.isNull(_cursorIndexOfMechanics)) {
++              _tmpMechanics = null;
++            } else {
++              _tmpMechanics = _cursor.getString(_cursorIndexOfMechanics);
++            }
++            final String _tmpDifficulty;
++            if (_cursor.isNull(_cursorIndexOfDifficulty)) {
++              _tmpDifficulty = null;
++            } else {
++              _tmpDifficulty = _cursor.getString(_cursorIndexOfDifficulty);
++            }
++            final List<String> _tmpAliases;
++            final String _tmp_1;
++            if (_cursor.isNull(_cursorIndexOfAliases)) {
++              _tmp_1 = null;
++            } else {
++              _tmp_1 = _cursor.getString(_cursorIndexOfAliases);
++            }
++            _tmpAliases = Converters.INSTANCE.toStringList(_tmp_1);
++            final List<String> _tmpTags;
++            final String _tmp_2;
++            if (_cursor.isNull(_cursorIndexOfTags)) {
++              _tmp_2 = null;
++            } else {
++              _tmp_2 = _cursor.getString(_cursorIndexOfTags);
++            }
++            _tmpTags = Converters.INSTANCE.toStringList(_tmp_2);
++            _item = new ExerciseEntity(_tmpId,_tmpName,_tmpPrimaryMuscle,_tmpSecondaryMuscles,_tmpEquipment,_tmpMechanics,_tmpDifficulty,_tmpAliases,_tmpTags);
++            _result.add(_item);
++          }
++          return _result;
++        } finally {
++          _cursor.close();
++          _statement.release();
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Object searchSimple(final String q,
++      final Continuation<? super List<ExerciseEntity>> $completion) {
++    final String _sql = "\n"
++            + "        SELECT * FROM exercise\n"
++            + "        WHERE name LIKE ? OR primaryMuscle LIKE ?\n"
++            + "        ORDER BY name\n"
++            + "    ";
++    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
++    int _argIndex = 1;
++    if (q == null) {
++      _statement.bindNull(_argIndex);
++    } else {
++      _statement.bindString(_argIndex, q);
++    }
++    _argIndex = 2;
++    if (q == null) {
++      _statement.bindNull(_argIndex);
++    } else {
++      _statement.bindString(_argIndex, q);
++    }
++    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
++    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<ExerciseEntity>>() {
++      @Override
++      @NonNull
++      public List<ExerciseEntity> call() throws Exception {
++        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
++        try {
++          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
++          final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
++          final int _cursorIndexOfPrimaryMuscle = CursorUtil.getColumnIndexOrThrow(_cursor, "primaryMuscle");
++          final int _cursorIndexOfSecondaryMuscles = CursorUtil.getColumnIndexOrThrow(_cursor, "secondaryMuscles");
++          final int _cursorIndexOfEquipment = CursorUtil.getColumnIndexOrThrow(_cursor, "equipment");
++          final int _cursorIndexOfMechanics = CursorUtil.getColumnIndexOrThrow(_cursor, "mechanics");
++          final int _cursorIndexOfDifficulty = CursorUtil.getColumnIndexOrThrow(_cursor, "difficulty");
++          final int _cursorIndexOfAliases = CursorUtil.getColumnIndexOrThrow(_cursor, "aliases");
++          final int _cursorIndexOfTags = CursorUtil.getColumnIndexOrThrow(_cursor, "tags");
++          final List<ExerciseEntity> _result = new ArrayList<ExerciseEntity>(_cursor.getCount());
++          while (_cursor.moveToNext()) {
++            final ExerciseEntity _item;
++            final int _tmpId;
++            _tmpId = _cursor.getInt(_cursorIndexOfId);
++            final String _tmpName;
++            if (_cursor.isNull(_cursorIndexOfName)) {
++              _tmpName = null;
++            } else {
++              _tmpName = _cursor.getString(_cursorIndexOfName);
++            }
++            final String _tmpPrimaryMuscle;
++            if (_cursor.isNull(_cursorIndexOfPrimaryMuscle)) {
++              _tmpPrimaryMuscle = null;
++            } else {
++              _tmpPrimaryMuscle = _cursor.getString(_cursorIndexOfPrimaryMuscle);
++            }
++            final List<String> _tmpSecondaryMuscles;
++            final String _tmp;
++            if (_cursor.isNull(_cursorIndexOfSecondaryMuscles)) {
++              _tmp = null;
++            } else {
++              _tmp = _cursor.getString(_cursorIndexOfSecondaryMuscles);
++            }
++            _tmpSecondaryMuscles = Converters.INSTANCE.toStringList(_tmp);
++            final String _tmpEquipment;
++            if (_cursor.isNull(_cursorIndexOfEquipment)) {
++              _tmpEquipment = null;
++            } else {
++              _tmpEquipment = _cursor.getString(_cursorIndexOfEquipment);
++            }
++            final String _tmpMechanics;
++            if (_cursor.isNull(_cursorIndexOfMechanics)) {
++              _tmpMechanics = null;
++            } else {
++              _tmpMechanics = _cursor.getString(_cursorIndexOfMechanics);
++            }
++            final String _tmpDifficulty;
++            if (_cursor.isNull(_cursorIndexOfDifficulty)) {
++              _tmpDifficulty = null;
++            } else {
++              _tmpDifficulty = _cursor.getString(_cursorIndexOfDifficulty);
++            }
++            final List<String> _tmpAliases;
++            final String _tmp_1;
++            if (_cursor.isNull(_cursorIndexOfAliases)) {
++              _tmp_1 = null;
++            } else {
++              _tmp_1 = _cursor.getString(_cursorIndexOfAliases);
++            }
++            _tmpAliases = Converters.INSTANCE.toStringList(_tmp_1);
++            final List<String> _tmpTags;
++            final String _tmp_2;
++            if (_cursor.isNull(_cursorIndexOfTags)) {
++              _tmp_2 = null;
++            } else {
++              _tmp_2 = _cursor.getString(_cursorIndexOfTags);
++            }
++            _tmpTags = Converters.INSTANCE.toStringList(_tmp_2);
++            _item = new ExerciseEntity(_tmpId,_tmpName,_tmpPrimaryMuscle,_tmpSecondaryMuscles,_tmpEquipment,_tmpMechanics,_tmpDifficulty,_tmpAliases,_tmpTags);
++            _result.add(_item);
++          }
++          return _result;
++        } finally {
++          _cursor.close();
++          _statement.release();
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Object getByIds(final List<Integer> ids,
++      final Continuation<? super List<ExerciseEntity>> $completion) {
++    final StringBuilder _stringBuilder = StringUtil.newStringBuilder();
++    _stringBuilder.append("SELECT * FROM exercise WHERE id IN (");
++    final int _inputSize = ids.size();
++    StringUtil.appendPlaceholders(_stringBuilder, _inputSize);
++    _stringBuilder.append(")");
++    final String _sql = _stringBuilder.toString();
++    final int _argCount = 0 + _inputSize;
++    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, _argCount);
++    int _argIndex = 1;
++    for (Integer _item : ids) {
++      if (_item == null) {
++        _statement.bindNull(_argIndex);
++      } else {
++        _statement.bindLong(_argIndex, _item);
++      }
++      _argIndex++;
++    }
++    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
++    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<ExerciseEntity>>() {
++      @Override
++      @NonNull
++      public List<ExerciseEntity> call() throws Exception {
++        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
++        try {
++          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
++          final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
++          final int _cursorIndexOfPrimaryMuscle = CursorUtil.getColumnIndexOrThrow(_cursor, "primaryMuscle");
++          final int _cursorIndexOfSecondaryMuscles = CursorUtil.getColumnIndexOrThrow(_cursor, "secondaryMuscles");
++          final int _cursorIndexOfEquipment = CursorUtil.getColumnIndexOrThrow(_cursor, "equipment");
++          final int _cursorIndexOfMechanics = CursorUtil.getColumnIndexOrThrow(_cursor, "mechanics");
++          final int _cursorIndexOfDifficulty = CursorUtil.getColumnIndexOrThrow(_cursor, "difficulty");
++          final int _cursorIndexOfAliases = CursorUtil.getColumnIndexOrThrow(_cursor, "aliases");
++          final int _cursorIndexOfTags = CursorUtil.getColumnIndexOrThrow(_cursor, "tags");
++          final List<ExerciseEntity> _result = new ArrayList<ExerciseEntity>(_cursor.getCount());
++          while (_cursor.moveToNext()) {
++            final ExerciseEntity _item_1;
++            final int _tmpId;
++            _tmpId = _cursor.getInt(_cursorIndexOfId);
++            final String _tmpName;
++            if (_cursor.isNull(_cursorIndexOfName)) {
++              _tmpName = null;
++            } else {
++              _tmpName = _cursor.getString(_cursorIndexOfName);
++            }
++            final String _tmpPrimaryMuscle;
++            if (_cursor.isNull(_cursorIndexOfPrimaryMuscle)) {
++              _tmpPrimaryMuscle = null;
++            } else {
++              _tmpPrimaryMuscle = _cursor.getString(_cursorIndexOfPrimaryMuscle);
++            }
++            final List<String> _tmpSecondaryMuscles;
++            final String _tmp;
++            if (_cursor.isNull(_cursorIndexOfSecondaryMuscles)) {
++              _tmp = null;
++            } else {
++              _tmp = _cursor.getString(_cursorIndexOfSecondaryMuscles);
++            }
++            _tmpSecondaryMuscles = Converters.INSTANCE.toStringList(_tmp);
++            final String _tmpEquipment;
++            if (_cursor.isNull(_cursorIndexOfEquipment)) {
++              _tmpEquipment = null;
++            } else {
++              _tmpEquipment = _cursor.getString(_cursorIndexOfEquipment);
++            }
++            final String _tmpMechanics;
++            if (_cursor.isNull(_cursorIndexOfMechanics)) {
++              _tmpMechanics = null;
++            } else {
++              _tmpMechanics = _cursor.getString(_cursorIndexOfMechanics);
++            }
++            final String _tmpDifficulty;
++            if (_cursor.isNull(_cursorIndexOfDifficulty)) {
++              _tmpDifficulty = null;
++            } else {
++              _tmpDifficulty = _cursor.getString(_cursorIndexOfDifficulty);
++            }
++            final List<String> _tmpAliases;
++            final String _tmp_1;
++            if (_cursor.isNull(_cursorIndexOfAliases)) {
++              _tmp_1 = null;
++            } else {
++              _tmp_1 = _cursor.getString(_cursorIndexOfAliases);
++            }
++            _tmpAliases = Converters.INSTANCE.toStringList(_tmp_1);
++            final List<String> _tmpTags;
++            final String _tmp_2;
++            if (_cursor.isNull(_cursorIndexOfTags)) {
++              _tmp_2 = null;
++            } else {
++              _tmp_2 = _cursor.getString(_cursorIndexOfTags);
++            }
++            _tmpTags = Converters.INSTANCE.toStringList(_tmp_2);
++            _item_1 = new ExerciseEntity(_tmpId,_tmpName,_tmpPrimaryMuscle,_tmpSecondaryMuscles,_tmpEquipment,_tmpMechanics,_tmpDifficulty,_tmpAliases,_tmpTags);
++            _result.add(_item_1);
++          }
++          return _result;
++        } finally {
++          _cursor.close();
++          _statement.release();
++        }
++      }
++    }, $completion);
++  }
++
++  @NonNull
++  public static List<Class<?>> getRequiredConverters() {
++    return Collections.emptyList();
++  }
++}

@@ -1,0 +1,5 @@
+<resources>
+    <color name="ic_launcher_background">#000000</color> <!-- Negro -->
+    <color name="ic_launcher_foreground_tint">#FFD700</color> <!-- Amarillo oro -->
+</resources>
+

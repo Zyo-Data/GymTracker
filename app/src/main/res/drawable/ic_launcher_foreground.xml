@@ -1,0 +1,12 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="@color/ic_launcher_foreground_tint">
+
+    <!-- Pesa/Dumbbell -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M3,10h2V7c0,-0.55 0.45,-1 1,-1h2c0.55,0 1,0.45 1,1v3h6V7c0,-0.55 0.45,-1 1,-1h2c0.55,0 1,0.45 1,1v3h2c0.55,0 1,0.45 1,1v2c0,0.55 -0.45,1 -1,1h-2v3c0,0.55 -0.45,1 -1,1h-2c-0.55,0 -1,-0.45 -1,-1v-3H9v3c0,0.55 -0.45,1 -1,1H6c-0.55,0 -1,-0.45 -1,-1v-3H3c-0.55,0 -1,-0.45 -1,-1v-2c0,-0.55 0.45,-1 1,-1z"/>
+</vector>

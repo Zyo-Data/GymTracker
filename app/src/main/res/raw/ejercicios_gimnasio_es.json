@@ -1,0 +1,3031 @@
+[
+  {
+    "id": 1,
+    "name": "Press de banca con barra",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Barbell Bench Press",
+      "Press banca barra"
+    ],
+    "tags": [
+      "Plano",
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Press de banca con mancuernas",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Dumbbell Bench Press",
+      "Press banca mancuernas"
+    ],
+    "tags": [
+      "Plano",
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Press inclinado con barra",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Incline Barbell Press",
+      "Press inclinado barra",
+      "Incline Bench Press"
+    ],
+    "tags": [
+      "Inclinado",
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Press inclinado con mancuernas",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Incline Dumbbell Press",
+      "Press inclinado mancuernas"
+    ],
+    "tags": [
+      "Inclinado",
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Press declinado con barra",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Decline Barbell Press",
+      "Press declinado barra"
+    ],
+    "tags": [
+      "Declinado",
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Press declinado con mancuernas",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Decline Dumbbell Press",
+      "Press declinado mancuernas"
+    ],
+    "tags": [
+      "Declinado",
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Press de pecho en máquina",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Chest Press Machine",
+      "Press de pecho en máquina"
+    ],
+    "tags": [
+      "Plano",
+      "Máquina"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Press inclinado en máquina",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Incline Chest Press Machine",
+      "Press inclinado en máquina"
+    ],
+    "tags": [
+      "Inclinado",
+      "Máquina"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Fondos en paralelas",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Dips",
+      "Fondos en paralelas"
+    ],
+    "tags": [
+      "Fondos",
+      "Paralelas"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Aperturas en polea (Alto a medio)",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Cable Fly",
+      "Aperturas en polea"
+    ],
+    "tags": [
+      "Aperturas",
+      "Polea",
+      "Alto a medio"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Aperturas en polea (Medio a medio)",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Cable Fly",
+      "Aperturas en polea"
+    ],
+    "tags": [
+      "Aperturas",
+      "Polea",
+      "Medio a medio"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Aperturas en polea (Bajo a medio)",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Cable Fly",
+      "Aperturas en polea"
+    ],
+    "tags": [
+      "Aperturas",
+      "Polea",
+      "Bajo a medio"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Aperturas en contractor",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Pec Deck Fly",
+      "Aperturas en contractor"
+    ],
+    "tags": [
+      "Aperturas",
+      "Máquina"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Flexiones",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Push-Up",
+      "Flexiones"
+    ],
+    "tags": [
+      "Calistenia"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Flexiones inclinadas",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Incline Push-Up",
+      "Flexiones inclinadas"
+    ],
+    "tags": [
+      "Inclinado",
+      "Calistenia"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Flexiones declinadas",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Decline Push-Up",
+      "Flexiones declinadas"
+    ],
+    "tags": [
+      "Declinado",
+      "Calistenia"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Press landmine",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Landmine",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Landmine Press",
+      "Press landmine"
+    ],
+    "tags": [
+      "Unilateral opcional"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Peso muerto convencional",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Conventional Deadlift",
+      "Peso muerto"
+    ],
+    "tags": [
+      "Básico"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Peso muerto rumano",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Romanian Deadlift",
+      "Peso muerto rumano"
+    ],
+    "tags": [
+      "Cadera",
+      "Bisagra"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Peso muerto sumo",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Sumo Deadlift",
+      "Peso muerto sumo"
+    ],
+    "tags": [
+      "Sumo"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Peso muerto con barra hexagonal",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Barra hexagonal",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Trap Bar Deadlift",
+      "Peso muerto con barra hexagonal"
+    ],
+    "tags": [
+      "Básico"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Remo con barra (Agarre prono)",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Barbell Row",
+      "Remo con barra"
+    ],
+    "tags": [
+      "Remo",
+      "Pesas libres",
+      "Agarre prono"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Remo con barra (Agarre supino)",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Barbell Row",
+      "Remo con barra"
+    ],
+    "tags": [
+      "Remo",
+      "Pesas libres",
+      "Agarre supino"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Remo Pendlay",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Pendlay Row",
+      "Remo Pendlay"
+    ],
+    "tags": [
+      "Remo",
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Remo con mancuernas (Unilateral banco)",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Dumbbell Row",
+      "Remo con mancuernas"
+    ],
+    "tags": [
+      "Remo",
+      "Unilateral",
+      "Unilateral banco"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Remo con mancuernas (Con apoyo en pecho)",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Dumbbell Row",
+      "Remo con mancuernas"
+    ],
+    "tags": [
+      "Remo",
+      "Unilateral",
+      "Con apoyo en pecho"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Remo con apoyo en pecho",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Chest-Supported Row",
+      "Remo pecho apoyado"
+    ],
+    "tags": [
+      "Remo",
+      "Soporte pecho"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Remo en polea sentado (Agarre neutro)",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Seated Cable Row",
+      "Remo en polea sentado"
+    ],
+    "tags": [
+      "Remo",
+      "Polea baja",
+      "Agarre neutro"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Remo en polea sentado (Agarre ancho)",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Seated Cable Row",
+      "Remo en polea sentado"
+    ],
+    "tags": [
+      "Remo",
+      "Polea baja",
+      "Agarre ancho"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Remo en polea sentado (Agarre supino)",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Seated Cable Row",
+      "Remo en polea sentado"
+    ],
+    "tags": [
+      "Remo",
+      "Polea baja",
+      "Agarre supino"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Jalón al pecho (Agarre ancho)",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Lat Pulldown",
+      "Jalón al pecho"
+    ],
+    "tags": [
+      "Polea alta",
+      "Agarre ancho"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Jalón al pecho (Agarre medio)",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Lat Pulldown",
+      "Jalón al pecho"
+    ],
+    "tags": [
+      "Polea alta",
+      "Agarre medio"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Jalón al pecho (Agarre cerrado)",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Lat Pulldown",
+      "Jalón al pecho"
+    ],
+    "tags": [
+      "Polea alta",
+      "Agarre cerrado"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Jalón al pecho (Agarre supino)",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Lat Pulldown",
+      "Jalón al pecho"
+    ],
+    "tags": [
+      "Polea alta",
+      "Agarre supino"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Jalón al pecho (Agarre neutro)",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Lat Pulldown",
+      "Jalón al pecho"
+    ],
+    "tags": [
+      "Polea alta",
+      "Agarre neutro"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Jalón agarre cerrado",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Close-Grip Lat Pulldown",
+      "Jalón agarre cerrado"
+    ],
+    "tags": [
+      "Polea alta",
+      "Agarre cerrado"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Dominadas",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Pull-Up",
+      "Dominadas"
+    ],
+    "tags": [
+      "Dominadas",
+      "Pronación"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Dominadas supinas",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Chin-Up",
+      "Dominadas supinas"
+    ],
+    "tags": [
+      "Supinación"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Dominadas agarre neutro",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Neutral-Grip Pull-Up",
+      "Dominadas agarre neutro"
+    ],
+    "tags": [
+      "Dominadas",
+      "Neutro"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Face pull",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Face Pull",
+      "Face pull"
+    ],
+    "tags": [
+      "Rehab",
+      "Deltoide posterior"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Pull-over en polea",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Straight-Arm Pulldown",
+      "Pull-over en polea"
+    ],
+    "tags": [
+      "Polea alta"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Remo en máquina",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Machine Row",
+      "Remo en máquina"
+    ],
+    "tags": [
+      "Remo",
+      "Máquina"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Remo T-Bar",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "T-Bar Row",
+      "Remo T-Bar"
+    ],
+    "tags": [
+      "Remo",
+      "T-Bar"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Remo landmine",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps",
+      "Erectores espinales",
+      "Deltoides posteriores"
+    ],
+    "equipment": "Landmine",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Landmine Row",
+      "Remo landmine"
+    ],
+    "tags": [
+      "Remo"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Sentadilla trasera",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Back Squat",
+      "Sentadilla trasera"
+    ],
+    "tags": [
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Sentadilla frontal",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Front Squat",
+      "Sentadilla frontal"
+    ],
+    "tags": [
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Sentadilla high-bar",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "High-Bar Squat",
+      "Sentadilla high-bar"
+    ],
+    "tags": [
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Sentadilla low-bar",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Low-Bar Squat",
+      "Sentadilla low-bar"
+    ],
+    "tags": [
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Prensa hack",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Hack Squat Machine",
+      "Prensa hack"
+    ],
+    "tags": [
+      "Máquina"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Prensa de piernas",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Leg Press",
+      "Prensa de piernas"
+    ],
+    "tags": [
+      "Máquina"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Zancada búlgara",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Bulgarian Split Squat",
+      "Zancada búlgara"
+    ],
+    "tags": [
+      "Unilateral"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Zancadas caminando",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Walking Lunge",
+      "Zancadas caminando"
+    ],
+    "tags": [
+      "Unilateral",
+      "Dinámico"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Zancada estática",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Static Lunge",
+      "Zancada estática"
+    ],
+    "tags": [
+      "Unilateral"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Subidas al cajón",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Step-Up",
+      "Subidas al cajón"
+    ],
+    "tags": [
+      "Unilateral"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Extensión de cuádriceps",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Leg Extension",
+      "Extensión de cuádriceps"
+    ],
+    "tags": [
+      "Máquina"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Curl femoral sentado",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Leg Curl Seated",
+      "Curl femoral sentado"
+    ],
+    "tags": [
+      "Isquios",
+      "Sentado"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Curl femoral tumbado",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Leg Curl Lying",
+      "Curl femoral tumbado"
+    ],
+    "tags": [
+      "Isquios",
+      "Tumbado"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Curl nórdico",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Nordic Hamstring Curl",
+      "Curl nórdico"
+    ],
+    "tags": [
+      "Isquios"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Buenos días",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Good Morning",
+      "Buenos días"
+    ],
+    "tags": [
+      "Bisagra cadera"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Hip thrust con barra",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Hip Thrust Barbell",
+      "Hip thrust con barra"
+    ],
+    "tags": [
+      "Glúteos"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Puente de glúteos",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Glute Bridge",
+      "Puente de glúteos"
+    ],
+    "tags": [
+      "Glúteos"
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Patada de glúteo en polea",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Cable Kickback",
+      "Patada de glúteo en polea"
+    ],
+    "tags": [
+      "Glúteos"
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Abductores en máquina",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Abductor Machine",
+      "Abductores en máquina"
+    ],
+    "tags": [
+      "Cadera"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Aductores en máquina",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Adductor Machine",
+      "Aductores en máquina"
+    ],
+    "tags": [
+      "Cadera"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Elevaciones de gemelos de pie",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Calf Raise Standing",
+      "Elevaciones de gemelos de pie"
+    ],
+    "tags": [
+      "Gemelos",
+      "De pie"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Elevaciones de gemelos sentado",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Calf Raise Seated",
+      "Elevaciones de gemelos sentado"
+    ],
+    "tags": [
+      "Sóleo",
+      "Sentado"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Empuje de trineo",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Trineo",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Sled Push",
+      "Empuje de trineo"
+    ],
+    "tags": [
+      "Trineo"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Arrastre de trineo",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Trineo",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Sled Pull",
+      "Arrastre de trineo"
+    ],
+    "tags": [
+      "Trineo"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Salto al cajón",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos",
+      "Isquiotibiales",
+      "Core",
+      "Gemelos"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Box Jump",
+      "Salto al cajón"
+    ],
+    "tags": [
+      "Pliometría"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Press militar (De pie)",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Overhead Press",
+      "Press militar"
+    ],
+    "tags": [
+      "De pie",
+      "De pie"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Press militar (Sentado)",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Overhead Press",
+      "Press militar"
+    ],
+    "tags": [
+      "De pie",
+      "Sentado"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Press militar con mancuernas sentado",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Seated Overhead Press",
+      "Press militar mancuernas"
+    ],
+    "tags": [
+      "Sentado"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Press Arnold",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Arnold Press",
+      "Press Arnold"
+    ],
+    "tags": [
+      "Variación"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Push press",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Push Press",
+      "Push press"
+    ],
+    "tags": [
+      "Potencia"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Elevaciones laterales (De pie)",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Lateral Raise",
+      "Elevaciones laterales"
+    ],
+    "tags": [
+      "Aislamiento",
+      "De pie"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Elevaciones laterales (Inclinado)",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Lateral Raise",
+      "Elevaciones laterales"
+    ],
+    "tags": [
+      "Aislamiento",
+      "Inclinado"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Elevaciones laterales (En banco inclinado)",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Lateral Raise",
+      "Elevaciones laterales"
+    ],
+    "tags": [
+      "Aislamiento",
+      "En banco inclinado"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Elevaciones laterales (Con cable)",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Lateral Raise",
+      "Elevaciones laterales"
+    ],
+    "tags": [
+      "Aislamiento",
+      "Con cable"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Elevaciones laterales en polea",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Cable Lateral Raise",
+      "Elevaciones laterales en polea"
+    ],
+    "tags": [
+      "Aislamiento"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Aperturas inversas",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Reverse Pec Deck",
+      "Aperturas inversas"
+    ],
+    "tags": [
+      "Deltoide posterior"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Pájaros con mancuernas",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Rear Delt Fly Dumbbell",
+      "Pájaros"
+    ],
+    "tags": [
+      "Deltoide posterior"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Remo al mentón",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Upright Row",
+      "Remo al mentón"
+    ],
+    "tags": [
+      "Trapecio",
+      "Deltoide lateral"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Face pull",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps",
+      "Trapecio"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Face Pull",
+      "Face pull"
+    ],
+    "tags": [
+      "Deltoide posterior"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Curl con barra",
+    "primaryMuscle": "Bíceps",
+    "secondaryMuscles": [
+      "Braquial",
+      "Antebrazo"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Barbell Curl",
+      "Curl con barra"
+    ],
+    "tags": [
+      "De pie"
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Curl con barra Z",
+    "primaryMuscle": "Bíceps",
+    "secondaryMuscles": [
+      "Braquial",
+      "Antebrazo"
+    ],
+    "equipment": "Barra Z",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "EZ-Bar Curl",
+      "Curl con barra Z"
+    ],
+    "tags": [
+      "De pie"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Curl con mancuernas",
+    "primaryMuscle": "Bíceps",
+    "secondaryMuscles": [
+      "Braquial",
+      "Antebrazo"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Dumbbell Curl",
+      "Curl con mancuernas"
+    ],
+    "tags": [
+      "Alterno"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Curl inclinado con mancuernas",
+    "primaryMuscle": "Bíceps",
+    "secondaryMuscles": [
+      "Braquial",
+      "Antebrazo"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Incline Dumbbell Curl",
+      "Curl inclinado mancuernas"
+    ],
+    "tags": [
+      "Inclinado"
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Curl martillo",
+    "primaryMuscle": "Bíceps",
+    "secondaryMuscles": [
+      "Braquial",
+      "Antebrazo"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Hammer Curl",
+      "Curl martillo"
+    ],
+    "tags": [
+      "Neutro"
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Curl en banco Scott",
+    "primaryMuscle": "Bíceps",
+    "secondaryMuscles": [
+      "Braquial",
+      "Antebrazo"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Preacher Curl",
+      "Curl en banco Scott"
+    ],
+    "tags": [
+      "Banco Scott"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Curl en polea",
+    "primaryMuscle": "Bíceps",
+    "secondaryMuscles": [
+      "Braquial",
+      "Antebrazo"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Cable Curl",
+      "Curl en polea"
+    ],
+    "tags": [
+      "Polea"
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Curl de concentración",
+    "primaryMuscle": "Bíceps",
+    "secondaryMuscles": [
+      "Braquial",
+      "Antebrazo"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Concentration Curl",
+      "Curl de concentración"
+    ],
+    "tags": [
+      "Unilateral"
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Curl bayesiano",
+    "primaryMuscle": "Bíceps",
+    "secondaryMuscles": [
+      "Braquial",
+      "Antebrazo"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Bayesian Curl",
+      "Curl bayesiano"
+    ],
+    "tags": [
+      "Atrás del cuerpo"
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Press banca agarre cerrado",
+    "primaryMuscle": "Tríceps",
+    "secondaryMuscles": [
+      "Pectoral",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Close-Grip Bench Press",
+      "Press banca agarre cerrado"
+    ],
+    "tags": [
+      "Agarre cerrado"
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Fondos en paralelas",
+    "primaryMuscle": "Tríceps",
+    "secondaryMuscles": [
+      "Pectoral",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Dips",
+      "Fondos en paralelas"
+    ],
+    "tags": [
+      "Fondos"
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Extensiones de tríceps tumbado",
+    "primaryMuscle": "Tríceps",
+    "secondaryMuscles": [
+      "Pectoral",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Barra Z",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Skull Crusher",
+      "Extensiones tumbado",
+      "Romperskulls"
+    ],
+    "tags": [
+      "Tumbado"
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Extensión de tríceps sobre cabeza con mancuerna",
+    "primaryMuscle": "Tríceps",
+    "secondaryMuscles": [
+      "Pectoral",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Overhead Triceps Extension DB",
+      "Extensión de tríceps sobre cabeza"
+    ],
+    "tags": [
+      "Por encima de la cabeza"
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Jalón de tríceps (Barra recta)",
+    "primaryMuscle": "Tríceps",
+    "secondaryMuscles": [
+      "Pectoral",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Triceps Pushdown",
+      "Jalón de tríceps"
+    ],
+    "tags": [
+      "Polea",
+      "Barra recta"
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Jalón de tríceps (Barra V)",
+    "primaryMuscle": "Tríceps",
+    "secondaryMuscles": [
+      "Pectoral",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Triceps Pushdown",
+      "Jalón de tríceps"
+    ],
+    "tags": [
+      "Polea",
+      "Barra V"
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Jalón de tríceps (Cuerda)",
+    "primaryMuscle": "Tríceps",
+    "secondaryMuscles": [
+      "Pectoral",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Triceps Pushdown",
+      "Jalón de tríceps"
+    ],
+    "tags": [
+      "Polea",
+      "Cuerda"
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Jalón de tríceps con cuerda",
+    "primaryMuscle": "Tríceps",
+    "secondaryMuscles": [
+      "Pectoral",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Rope Pushdown",
+      "Jalón tríceps cuerda"
+    ],
+    "tags": [
+      "Cuerda"
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Patada de tríceps con mancuerna",
+    "primaryMuscle": "Tríceps",
+    "secondaryMuscles": [
+      "Pectoral",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Kickback Dumbbell",
+      "Patada de tríceps"
+    ],
+    "tags": [
+      "Unilateral"
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Fondos asistidos en máquina",
+    "primaryMuscle": "Tríceps",
+    "secondaryMuscles": [
+      "Pectoral",
+      "Deltoides anteriores"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Machine Dip",
+      "Fondos asistidos en máquina"
+    ],
+    "tags": [
+      "Máquina"
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Plancha",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Plank",
+      "Plancha"
+    ],
+    "tags": [
+      "Isométrico"
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Plancha lateral",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Side Plank",
+      "Plancha lateral"
+    ],
+    "tags": [
+      "Isométrico"
+    ]
+  },
+  {
+    "id": 105,
+    "name": "Crunch",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Crunch",
+      "Crunch"
+    ],
+    "tags": [
+      "Abdominales"
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Elevación de piernas colgado",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Hanging Leg Raise",
+      "Elevación de piernas colgado"
+    ],
+    "tags": [
+      "Barra de dominadas"
+    ]
+  },
+  {
+    "id": 107,
+    "name": "Elevación de rodillas en silla romana",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Captain's Chair Knee Raise",
+      "Elevación de rodillas en silla romana"
+    ],
+    "tags": [
+      "Máquina"
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Rodillo abdominal",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Disco",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Ab Wheel Rollout",
+      "Rodillo abdominal"
+    ],
+    "tags": [
+      "Rueda abdominal"
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Woodchopper alto a bajo",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Cable Woodchopper High to Low",
+      "Woodchopper alto a bajo"
+    ],
+    "tags": [
+      "Rotación"
+    ]
+  },
+  {
+    "id": 110,
+    "name": "Woodchopper bajo a alto",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Cable Woodchopper Low to High",
+      "Woodchopper bajo a alto"
+    ],
+    "tags": [
+      "Rotación"
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Giros rusos",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Disco",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Russian Twist",
+      "Giros rusos"
+    ],
+    "tags": [
+      "Giro"
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Dead bug",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Dead Bug",
+      "Dead bug"
+    ],
+    "tags": [
+      "Control motor"
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Pallof press",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Pallof Press",
+      "Pallof press"
+    ],
+    "tags": [
+      "Antirrotación"
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Sit-up",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Sit-Up",
+      "Sit-up"
+    ],
+    "tags": [
+      "Abdominales"
+    ]
+  },
+  {
+    "id": 115,
+    "name": "V-ups",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "V-Up",
+      "V-ups"
+    ],
+    "tags": [
+      "Abdominales"
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Escaladores",
+    "primaryMuscle": "Core",
+    "secondaryMuscles": [
+      "Oblicuos",
+      "Transverso",
+      "Lumbares"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Mountain Climbers",
+      "Escaladores"
+    ],
+    "tags": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Hip thrust en máquina",
+    "primaryMuscle": "Glúteos",
+    "secondaryMuscles": [
+      "Isquiotibiales",
+      "Core"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Hip Thrust Machine",
+      "Hip thrust en máquina"
+    ],
+    "tags": [
+      "Máquina"
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Pull-through",
+    "primaryMuscle": "Glúteos",
+    "secondaryMuscles": [
+      "Isquiotibiales",
+      "Core"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Cable Pull-Through",
+      "Pull-through"
+    ],
+    "tags": [
+      "Bisagra"
+    ]
+  },
+  {
+    "id": 119,
+    "name": "Balanceo con kettlebell",
+    "primaryMuscle": "Glúteos",
+    "secondaryMuscles": [
+      "Isquiotibiales",
+      "Core"
+    ],
+    "equipment": "Kettlebell",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Kettlebell Swing",
+      "Balanceo con kettlebell"
+    ],
+    "tags": [
+      "Potencia"
+    ]
+  },
+  {
+    "id": 120,
+    "name": "Peso muerto rumano a una pierna",
+    "primaryMuscle": "Glúteos",
+    "secondaryMuscles": [
+      "Isquiotibiales",
+      "Core"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Single-Leg RDL",
+      "Peso muerto rumano a una pierna"
+    ],
+    "tags": [
+      "Unilateral"
+    ]
+  },
+  {
+    "id": 121,
+    "name": "Frog pumps",
+    "primaryMuscle": "Glúteos",
+    "secondaryMuscles": [
+      "Isquiotibiales",
+      "Core"
+    ],
+    "equipment": "Peso corporal",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Frog Pumps",
+      "Frog pumps"
+    ],
+    "tags": [
+      "Glúteos"
+    ]
+  },
+  {
+    "id": 122,
+    "name": "Curl de muñeca",
+    "primaryMuscle": "Antebrazo",
+    "secondaryMuscles": [
+      "Agarre"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Wrist Curl",
+      "Curl de muñeca"
+    ],
+    "tags": [
+      "Flexión"
+    ]
+  },
+  {
+    "id": 123,
+    "name": "Curl inverso de muñeca",
+    "primaryMuscle": "Antebrazo",
+    "secondaryMuscles": [
+      "Agarre"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Reverse Wrist Curl",
+      "Curl inverso de muñeca"
+    ],
+    "tags": [
+      "Extensión"
+    ]
+  },
+  {
+    "id": 124,
+    "name": "Paseo del granjero",
+    "primaryMuscle": "Antebrazo",
+    "secondaryMuscles": [
+      "Agarre"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Farmer's Walk",
+      "Paseo del granjero"
+    ],
+    "tags": [
+      "Grip"
+    ]
+  },
+  {
+    "id": 125,
+    "name": "Curl inverso",
+    "primaryMuscle": "Antebrazo",
+    "secondaryMuscles": [
+      "Agarre"
+    ],
+    "equipment": "Barra Z",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Reverse Curl",
+      "Curl inverso"
+    ],
+    "tags": [
+      "Brachioradialis"
+    ]
+  },
+  {
+    "id": 126,
+    "name": "Encogimientos con barra",
+    "primaryMuscle": "Trapecio",
+    "secondaryMuscles": [
+      "Hombros"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Barbell Shrug",
+      "Encogimientos con barra"
+    ],
+    "tags": [
+      "De pie"
+    ]
+  },
+  {
+    "id": 127,
+    "name": "Encogimientos con mancuernas",
+    "primaryMuscle": "Trapecio",
+    "secondaryMuscles": [
+      "Hombros"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Dumbbell Shrug",
+      "Encogimientos con mancuernas"
+    ],
+    "tags": [
+      "De pie"
+    ]
+  },
+  {
+    "id": 128,
+    "name": "Encogimientos en polea",
+    "primaryMuscle": "Trapecio",
+    "secondaryMuscles": [
+      "Hombros"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Cable Shrug",
+      "Encogimientos en polea"
+    ],
+    "tags": [
+      "Polea"
+    ]
+  },
+  {
+    "id": 129,
+    "name": "Remo ergómetro",
+    "primaryMuscle": "Cardio",
+    "secondaryMuscles": [
+      "Resistencia"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Rowing Machine",
+      "Remo ergómetro"
+    ],
+    "tags": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 130,
+    "name": "Bicicleta de aire",
+    "primaryMuscle": "Cardio",
+    "secondaryMuscles": [
+      "Resistencia"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Assault Bike",
+      "Bicicleta de aire"
+    ],
+    "tags": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 131,
+    "name": "Cinta de correr",
+    "primaryMuscle": "Cardio",
+    "secondaryMuscles": [
+      "Resistencia"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Treadmill Run",
+      "Cinta de correr"
+    ],
+    "tags": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 132,
+    "name": "Escaladora",
+    "primaryMuscle": "Cardio",
+    "secondaryMuscles": [
+      "Resistencia"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "Stair Climber",
+      "Escaladora"
+    ],
+    "tags": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 133,
+    "name": "SkiErg",
+    "primaryMuscle": "Cardio",
+    "secondaryMuscles": [
+      "Resistencia"
+    ],
+    "equipment": "Máquina",
+    "mechanics": "Compuesto",
+    "difficulty": "Principiante",
+    "aliases": [
+      "SkiErg",
+      "SkiErg"
+    ],
+    "tags": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 134,
+    "name": "Cuerdas de batalla",
+    "primaryMuscle": "Cardio",
+    "secondaryMuscles": [
+      "Resistencia"
+    ],
+    "equipment": "Rope",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Battle Ropes",
+      "Cuerdas de batalla"
+    ],
+    "tags": [
+      "Metabólico"
+    ]
+  },
+  {
+    "id": 135,
+    "name": "Sentadilla goblet",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Cuádriceps"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Goblet squat"
+    ],
+    "tags": [
+      "Goblet",
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 136,
+    "name": "Zercher squat",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Cuádriceps"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Zercher squat"
+    ],
+    "tags": [
+      "Frontal",
+      "Pesas libres"
+    ]
+  },
+  {
+    "id": 137,
+    "name": "Jefferson curl",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Erectores espinales"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Jefferson curl"
+    ],
+    "tags": [
+      "Movilidad"
+    ]
+  },
+  {
+    "id": 138,
+    "name": "Press banca con multipower",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps"
+    ],
+    "equipment": "Multipower",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Smith machine bench press"
+    ],
+    "tags": [
+      "Multipower"
+    ]
+  },
+  {
+    "id": 139,
+    "name": "Remo con multipower",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps"
+    ],
+    "equipment": "Multipower",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Smith machine row"
+    ],
+    "tags": [
+      "Multipower"
+    ]
+  },
+  {
+    "id": 140,
+    "name": "Press militar en multipower",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Tríceps"
+    ],
+    "equipment": "Multipower",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Smith machine overhead press"
+    ],
+    "tags": [
+      "Multipower"
+    ]
+  },
+  {
+    "id": 141,
+    "name": "Dominadas asistidas con banda",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps"
+    ],
+    "equipment": "Banda elástica",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Band-assisted pull-up"
+    ],
+    "tags": [
+      "Asistido"
+    ]
+  },
+  {
+    "id": 142,
+    "name": "Fondos asistidos con banda",
+    "primaryMuscle": "Tríceps",
+    "secondaryMuscles": [
+      "Pectoral"
+    ],
+    "equipment": "Banda elástica",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Band-assisted dip"
+    ],
+    "tags": [
+      "Asistido"
+    ]
+  },
+  {
+    "id": 143,
+    "name": "Curl de femoral con banda",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Isquiotibiales"
+    ],
+    "equipment": "Banda elástica",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Banded leg curl"
+    ],
+    "tags": [
+      "Banda"
+    ]
+  },
+  {
+    "id": 144,
+    "name": "Hip abduction con banda",
+    "primaryMuscle": "Glúteos",
+    "secondaryMuscles": [
+      "Cadera"
+    ],
+    "equipment": "Banda elástica",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Banded hip abduction"
+    ],
+    "tags": [
+      "Banda"
+    ]
+  },
+  {
+    "id": 145,
+    "name": "Elevaciones laterales con banda",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Deltoide lateral"
+    ],
+    "equipment": "Banda elástica",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Banded lateral raise"
+    ],
+    "tags": [
+      "Banda"
+    ]
+  },
+  {
+    "id": 146,
+    "name": "Peso muerto con kettlebell",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Isquiotibiales"
+    ],
+    "equipment": "Kettlebell",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Kettlebell deadlift"
+    ],
+    "tags": [
+      "Bisagra"
+    ]
+  },
+  {
+    "id": 147,
+    "name": "Clean con mancuerna",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Espalda"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Dumbbell clean"
+    ],
+    "tags": [
+      "Potencia"
+    ]
+  },
+  {
+    "id": 148,
+    "name": "Snatch con mancuerna",
+    "primaryMuscle": "Hombros",
+    "secondaryMuscles": [
+      "Espalda"
+    ],
+    "equipment": "Mancuernas",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Dumbbell snatch"
+    ],
+    "tags": [
+      "Potencia"
+    ]
+  },
+  {
+    "id": 149,
+    "name": "Press banca con pausa",
+    "primaryMuscle": "Pectoral",
+    "secondaryMuscles": [
+      "Tríceps"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Paused bench press"
+    ],
+    "tags": [
+      "Pausa"
+    ]
+  },
+  {
+    "id": 150,
+    "name": "Sentadilla pausa",
+    "primaryMuscle": "Piernas",
+    "secondaryMuscles": [
+      "Glúteos"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Paused squat"
+    ],
+    "tags": [
+      "Pausa"
+    ]
+  },
+  {
+    "id": 151,
+    "name": "Peso muerto déficit",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Isquiotibiales"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Avanzado",
+    "aliases": [
+      "Deficit deadlift"
+    ],
+    "tags": [
+      "Déficit"
+    ]
+  },
+  {
+    "id": 152,
+    "name": "Remo con barra pendular",
+    "primaryMuscle": "Espalda",
+    "secondaryMuscles": [
+      "Bíceps"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Compuesto",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "Seal row"
+    ],
+    "tags": [
+      "Variación"
+    ]
+  },
+  {
+    "id": 153,
+    "name": "Curl de bíceps en polea alta",
+    "primaryMuscle": "Bíceps",
+    "secondaryMuscles": [
+      "Antebrazo"
+    ],
+    "equipment": "Polea",
+    "mechanics": "Aislado",
+    "difficulty": "Principiante",
+    "aliases": [
+      "High cable curl"
+    ],
+    "tags": [
+      "Polea alta"
+    ]
+  },
+  {
+    "id": 154,
+    "name": "Extensión tríceps en banca",
+    "primaryMuscle": "Tríceps",
+    "secondaryMuscles": [
+      "Pectoral"
+    ],
+    "equipment": "Barra",
+    "mechanics": "Aislado",
+    "difficulty": "Intermedio",
+    "aliases": [
+      "JM press"
+    ],
+    "tags": [
+      "Banco"
+    ]
+  }
+]
