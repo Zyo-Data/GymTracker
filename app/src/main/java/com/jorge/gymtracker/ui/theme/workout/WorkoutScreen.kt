@@ -13,7 +13,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.onFocusChanged
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
@@ -52,7 +51,7 @@ data class SetEntry(
     val count: Int = 1, // series iguales
 )
 
-/* ---------- Temporizador (mockup centrado, tiempo más grande con -10/+10) ---------- */
+/* ---------- Temporizador (mockup centrado, tiempo grande con -10/+10 al lado) ---------- */
 @Composable
 private fun RestTimer(
     modifier: Modifier = Modifier,
@@ -61,7 +60,7 @@ private fun RestTimer(
     val haptics = LocalHapticFeedback.current
     var isRunning by rememberSaveable(resetSignal) { mutableStateOf(false) }
     var hasStarted by rememberSaveable(resetSignal) { mutableStateOf(false) }
-    var remaining by rememberSaveable(resetSignal) { mutableStateOf(0) }
+    var remaining by rememberSaveable(resetSignal) { mutableIntStateOf(0) } // ✅ int state
 
     LaunchedEffect(isRunning) {
         if (isRunning) {
@@ -112,7 +111,7 @@ private fun RestTimer(
 
                 Text(
                     text = format(remaining),
-                    style = MaterialTheme.typography.displayMedium, // más grande
+                    style = MaterialTheme.typography.displayMedium,
                     color = MaterialTheme.colorScheme.primary
                 )
 
@@ -153,7 +152,6 @@ private fun RestTimer(
     }
 }
 
-
 /* ---------- Tarjeta compacta de set (énfasis en Series + icono X) ---------- */
 @Composable
 private fun SetRowCompact(
@@ -189,7 +187,6 @@ private fun SetRowCompact(
                 )
             }
 
-            // Más visible
             FilledTonalButton(
                 onClick = {},
                 enabled = false,
@@ -200,11 +197,7 @@ private fun SetRowCompact(
 
             Spacer(Modifier.width(8.dp))
 
-            // Controles compactos: −  +  X
-            Row(
-                horizontalArrangement = Arrangement.spacedBy(6.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
+            Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
                 OutlinedButton(
                     onClick = onDec,
                     contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp)
@@ -223,7 +216,6 @@ private fun SetRowCompact(
             }
         }
     }
-    // quitado el link "Eliminar" de debajo
 }
 
 /* ---------- Pantalla principal ---------- */
@@ -244,7 +236,8 @@ fun WorkoutScreen() {
     var sets by remember { mutableStateOf(listOf<SetEntry>()) }
     val listState = rememberLazyListState()
 
-    var resetCounter by remember { mutableStateOf(0) }
+    // ✅ usar int state
+    var resetCounter by remember { mutableIntStateOf(0) }
     val snackbarHostState = remember { SnackbarHostState() }
 
     val filtered by remember(query.text, all) {
@@ -320,7 +313,7 @@ fun WorkoutScreen() {
                 ) { Text("Añadir") }
             }
 
-            Divider()
+            HorizontalDivider()
 
             // Temporizador (mockup centrado)
             RestTimer(modifier = Modifier.fillMaxWidth(), resetSignal = resetCounter)
@@ -348,11 +341,10 @@ fun WorkoutScreen() {
                     )
                 }
             }
-// Fila final: Volumen total + botones, pegados a la BottomBar
+
+            // Fila final: Volumen total (izquierda) + botones a la derecha
             Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 0.dp), // 👈 elimina aire extra
+                modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -370,7 +362,7 @@ fun WorkoutScreen() {
                             query = TextFieldValue("")
                             reps = TextFieldValue("")
                             weight = TextFieldValue("")
-                            resetCounter++
+                            resetCounter++ // reinicia temporizador
                         },
                         contentPadding = PaddingValues(horizontal = 14.dp, vertical = 6.dp)
                     ) { Text("Reset") }
@@ -385,7 +377,7 @@ fun WorkoutScreen() {
                                 query = TextFieldValue("")
                                 reps = TextFieldValue("")
                                 weight = TextFieldValue("")
-                                resetCounter++
+                                resetCounter++   // reinicia temporizador
                                 snackbarHostState.showSnackbar(
                                     message = "Sesión guardada",
                                     duration = SnackbarDuration.Short
@@ -393,7 +385,7 @@ fun WorkoutScreen() {
                             }
                         },
                         enabled = sets.isNotEmpty(),
-                        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp)
+                        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
                     ) { Text("Guardar sesión") }
                 }
             }
@@ -443,7 +435,7 @@ private fun ExerciseSearchPanel(
                                 }
                                 .padding(horizontal = 8.dp, vertical = 6.dp)
                         )
-                        Divider()
+                        HorizontalDivider()
                     }
                 }
             }
