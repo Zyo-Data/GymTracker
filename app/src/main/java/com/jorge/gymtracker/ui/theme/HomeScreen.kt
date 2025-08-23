@@ -3,7 +3,6 @@ package com.jorge.gymtracker.ui.theme
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -11,7 +10,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.jorge.gymtracker.R
 import com.jorge.gymtracker.ui.theme.history.HistoryScreen
@@ -25,19 +23,11 @@ import androidx.compose.ui.draw.paint
 fun HomeScreen() {
     val navController = rememberNavController()
 
-    // Ruta actual para decidir si mostramos bottom bar
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentRoute = navBackStackEntry?.destination?.route
-    val showBottomBar = currentRoute in listOf(
-        Routes.Home.route,
-        Routes.Routines.route,
-        Routes.Settings.route
-    )
-
     Scaffold(
         containerColor = Color.Transparent,
         contentColor = Color.White,
-        bottomBar = { if (showBottomBar) BottomNavBar(navController) }
+        // 👇 SIEMPRE visible
+        bottomBar = { BottomNavBar(navController) }
     ) { innerPadding ->
         Box(
             modifier = Modifier
@@ -57,7 +47,7 @@ fun HomeScreen() {
                 composable(Routes.Home.route) {
                     HomeContent(
                         onStartWorkout = { navController.navigate(Routes.Workout.route) },
-                        onOpenHistory = { navController.navigate("history") }
+                        onOpenHistory  = { navController.navigate("history") }
                     )
                 }
 
