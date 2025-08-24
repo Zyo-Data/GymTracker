@@ -1,16 +1,21 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Tema base de la app (XML contenedor) -->
-    <style name="Theme.GymTracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <!-- Tema base de la app (Material 3 en XML) -->
+    <style name="Theme.GymTracker" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Opcionales: si no quieres forzar colores aquí, puedes quitar estas 2 líneas -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
+
+        <!-- Sistema -->
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="android:navigationBarColor">@color/black</item>
     </style>
 
-    <!-- Tema del Splash -->
-    <style name="Theme.GymTracker.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:windowBackground">@android:color/black</item>
+    <!-- Tema de splash por compatibilidad (aunque el splash lo hacemos en Compose) -->
+    <style name="Theme.GymTracker.Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/black</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="android:navigationBarColor">@color/black</item>
     </style>
 
 </resources>
