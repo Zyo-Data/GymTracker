@@ -1,0 +1,8 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Tu imagen de fondo -->
+    <item>
+        <bitmap
+            android:src="@drawable/gym_background"
+            android:gravity="fill" />
+    </item>
+</layer-list>

@@ -2,7 +2,6 @@
     package="com.jorge.gymtracker">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <!-- Si vas a usar AdMob más adelante, se añadirán permisos/metadata entonces -->
 
     <application
         android:allowBackup="true"
@@ -12,16 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GymTracker">
 
-        <!-- Lanzamos directamente MainActivity (splash/comprobación de login será dentro con Compose) -->
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.GymTracker.Splash">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <!-- Eliminar SplashActivity si existía; ya no es necesaria -->
     </application>
 </manifest>

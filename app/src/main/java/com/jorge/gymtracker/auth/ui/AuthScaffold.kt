@@ -18,12 +18,16 @@ import com.jorge.gymtracker.R
 @Composable
 fun AuthScaffold(content: @Composable ColumnScope.() -> Unit) {
     Box(Modifier.fillMaxSize()) {
+        // Fondo
         Image(
-            painter = painterResource(id = R.drawable.gym_background), // tu fondo
+            painter = painterResource(id = R.drawable.gym_background),
             contentDescription = null,
             contentScale = ContentScale.Crop,
-            modifier = Modifier.matchParentSize().alpha(0.85f)
+            modifier = Modifier
+                .matchParentSize()
+                .alpha(0.85f)
         )
+        // Velo para legibilidad
         Box(
             Modifier
                 .matchParentSize()
@@ -38,11 +42,14 @@ fun AuthScaffold(content: @Composable ColumnScope.() -> Unit) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Spacer(Modifier.height(24.dp))
+
+            // === LOGO MÁS GRANDE SIN BORDE ===
             Image(
-                painter = painterResource(id = R.drawable.ic_launcher), // tu logo
+                painter = painterResource(id = R.drawable.ic_logo_borde), // tu PNG transparente con borde en la forma
                 contentDescription = "Logo",
-                modifier = Modifier.size(96.dp)
+                modifier = Modifier.size(180.dp) // aumentado
             )
+
             Spacer(Modifier.height(16.dp))
             content()
             Spacer(Modifier.height(24.dp))
