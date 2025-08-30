@@ -6,37 +6,39 @@ import com.jorge.gymtracker.data.entity.SessionWithSets
 import com.jorge.gymtracker.data.entity.WorkoutSessionEntity
 import com.jorge.gymtracker.data.entity.WorkoutSetEntity
 import com.jorge.gymtracker.ui.theme.workout.SetEntry
+import com.jorge.gymtracker.domain.PRService   // ✅ import correcto (no usecase)
 import java.text.SimpleDateFormat
 import java.util.*
 
-class WorkoutRepository(context: Context) {
+class WorkoutRepository(
+    context: Context,
+    private val prService: PRService             // ✅ parámetro correcto
+) {
     private val db = AppDb.get(context)
     private val workoutDao = db.workoutDao()
     private val exerciseDao = db.exerciseDao()
 
-    // ✅ Método que usas en WorkoutScreen: guarda sets y calcula título automáticamente
+    // Guarda sesión y actualiza PRs
     suspend fun saveSession(sets: List<SetEntry>) {
-        // músculos primarios distintos de los ejercicios usados
         val ids = sets.map { it.exerciseId }.distinct()
         val exercises = if (ids.isNotEmpty()) exerciseDao.getByIds(ids) else emptyList()
         val muscles = exercises.map { it.primaryMuscle }.distinct()
         val musclesStr = if (muscles.isEmpty()) "Sesión" else muscles.joinToString("/")
 
         val title = "$musclesStr — ${
-            java.text.SimpleDateFormat("dd/MM HH:mm", java.util.Locale.getDefault()).format(java.util.Date())
+            SimpleDateFormat("dd/MM HH:mm", Locale.getDefault()).format(Date())
         }"
 
         val sessionId = workoutDao.insertSession(
-            com.jorge.gymtracker.data.entity.WorkoutSessionEntity(
+            WorkoutSessionEntity(
                 title = title,
                 date = System.currentTimeMillis()
             )
         )
 
-        // 👇 Expande cada fila según su count (xN series iguales)
         val setEntities = sets.flatMap { s ->
             List(s.count) {
-                com.jorge.gymtracker.data.entity.WorkoutSetEntity(
+                WorkoutSetEntity(
                     sessionId = sessionId,
                     exerciseId = s.exerciseId,
                     exerciseName = s.exerciseName,
@@ -46,10 +48,12 @@ class WorkoutRepository(context: Context) {
             }
         }
         workoutDao.insertSets(setEntities)
+
+        // ✅ actualiza PRs
+        prService.updatePRsForSession(setEntities)
     }
 
-
-    // Altas de bajo nivel (por si las necesitas)
+    // Altas de bajo nivel
     suspend fun insertSession(session: WorkoutSessionEntity): Long =
         workoutDao.insertSession(session)
 
@@ -62,8 +66,12 @@ class WorkoutRepository(context: Context) {
 
     suspend fun getSessionWithSets(id: Long): SessionWithSets? =
         workoutDao.getSessionWithSets(id)
+
     suspend fun deleteSession(id: Long) {
         workoutDao.deleteSessionWithSets(id)
     }
 
+    // ✅ sugerencia próxima carga
+    suspend fun suggestNextLoad(exerciseId: Int): Double? =
+        prService.suggestNextLoad(exerciseId)
 }

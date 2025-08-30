@@ -22,6 +22,7 @@ import com.jorge.gymtracker.ui.theme.history.HistoryScreen
 import com.jorge.gymtracker.ui.theme.navigation.BottomNavBar
 import com.jorge.gymtracker.ui.theme.navigation.Routes
 import com.jorge.gymtracker.ui.theme.workout.WorkoutScreen
+import com.jorge.gymtracker.ui.theme.workout.CurrentSessionScreen
 import androidx.compose.ui.draw.paint
 // Para evitar conflicto de nombres con tus Routes internos:
 import com.jorge.gymtracker.auth.nav.Routes as AuthRoutes
@@ -102,7 +103,8 @@ fun HomeScreen(rootNav: NavHostController) {
                 }
 
                 /* ---------- ENTRENAMIENTO ---------- */
-                composable(Routes.Workout.route) { WorkoutScreen() }
+                // ✅ pasamos sectionNav para poder navegar a "currentSession"
+                composable(Routes.Workout.route) { WorkoutScreen(navController = sectionNav) }
 
                 /* ---------- RUTINAS ---------- */
                 composable(Routes.Routines.route) {
@@ -116,7 +118,9 @@ fun HomeScreen(rootNav: NavHostController) {
 
                 /* ---------- HISTORIAL (lista) ---------- */
                 composable("history") {
-                    HistoryScreen(navController = sectionNav)
+                    HistoryScreen(
+                        onOpenSession = { id -> sectionNav.navigate("sessionDetail/$id") }
+                    )
                 }
 
                 /* ---------- HISTORIAL (detalle) ---------- */
@@ -132,6 +136,11 @@ fun HomeScreen(rootNav: NavHostController) {
 
                 /* ---------- CREAR RUTINA ---------- */
                 composable(Routes.CreateRoutine.route) { CreateRoutineScreen() }
+
+                /* ---------- REVISIÓN SESIÓN (nuevo) ---------- */
+                composable("currentSession") {
+                    CurrentSessionScreen(onBack = { sectionNav.navigateUp() })
+                }
             }
         }
     }

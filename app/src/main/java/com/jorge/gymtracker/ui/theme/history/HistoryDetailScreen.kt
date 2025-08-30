@@ -1,92 +1,113 @@
 package com.jorge.gymtracker.ui.theme.history
 
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Divider
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ListItem
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.jorge.gymtracker.data.db.AppDb
 import com.jorge.gymtracker.data.entity.SessionWithSets
 import com.jorge.gymtracker.data.repository.WorkoutRepository
-import com.jorge.gymtracker.ui.theme.components.GymTopBar
+import com.jorge.gymtracker.domain.PRService
+import java.text.SimpleDateFormat
+import java.util.*
 
-/**
- * Detalle del historial: agrupa sets idénticos (mismo ejercicio + mismo peso)
- * y muestra "series: N" + reps totales.
- */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HistoryDetailScreen(
     sessionId: Long,
-    onBack: () -> Unit
+    onBack: () -> Unit = {}
 ) {
     val ctx = LocalContext.current
-    val repo = remember { WorkoutRepository(ctx) }
+    val db = remember { AppDb.get(ctx) }
+    val prService = remember { PRService(db.workoutDao(), db.personalRecordDao(), db.progressionRuleDao()) }
+    val workoutRepo = remember { WorkoutRepository(ctx, prService) }
 
-    var detail by remember { mutableStateOf<SessionWithSets?>(null) }
+    var session by remember { mutableStateOf<SessionWithSets?>(null) }
 
     LaunchedEffect(sessionId) {
-        // getSessionWithSets() es suspend: ok dentro de LaunchedEffect
-        detail = repo.getSessionWithSets(sessionId)
-    }
-
-    // Agrupa sets por (ejercicio, peso) -> filas comprimidas
-    val rows: List<AggregatedRow> = remember(detail) {
-        (detail?.sets ?: emptyList())
-            .groupBy { it.exerciseName to it.weight }
-            .map { (key, group) ->
-                val first = group.first()
-                AggregatedRow(
-                    exerciseName = first.exerciseName,
-                    weight = key.second,
-                    series = group.size,
-                    totalReps = group.sumOf { it.reps }
-                )
-            }
-            .sortedWith(
-                compareBy<AggregatedRow> { it.exerciseName.lowercase() }
-                    .thenByDescending { it.weight }
-            )
+        session = workoutRepo.getSessionWithSets(sessionId)
     }
 
     Scaffold(
         topBar = {
-            GymTopBar(title = "Detalle de sesión", canNavigateBack = true, onBack = onBack)
+            TopAppBar(
+                title = { Text(session?.session?.title ?: "Detalle de sesión") },
+                navigationIcon = {
+                    IconButton(onClick = onBack) {
+                        Icon(
+                            imageVector = Icons.Filled.ArrowBack,
+                            contentDescription = "Volver"
+                        )
+                    }
+                }
+            )
         }
-    ) { inner ->
-        if (detail == null) {
-            Text("Cargando...", Modifier.padding(inner))
-        } else {
-            LazyColumn(
-                modifier = Modifier
+    ) { innerPadding ->
+        val s = session
+        if (s == null) {
+            Box(
+                Modifier
                     .fillMaxSize()
-                    .padding(inner)
-                    .padding(horizontal = 12.dp, vertical = 8.dp)
+                    .padding(innerPadding),
+                contentAlignment = Alignment.Center
             ) {
-                items(rows) { row ->
-                    ListItem(
-                        headlineContent = { Text(row.exerciseName) },
-                        supportingContent = {
-                            Text(
-                                "${row.weight.removeTrailingZeros()} kg • series: ${row.series} • ${row.totalReps} reps totales"
-                            )
-                        }
-                    )
-                    Divider(modifier = Modifier.padding(vertical = 6.dp))
+                CircularProgressIndicator()
+            }
+        } else {
+            // 👉 AGRUPAR: por nombre + reps + peso
+            val grouped = remember(s.sets) {
+                s.sets.groupBy { Triple(it.exerciseName, it.reps, it.weight) }
+                    .map { (key, value) ->
+                        GroupedRow(
+                            exerciseName = key.first,
+                            reps = key.second,
+                            weight = key.third,
+                            count = value.size
+                        )
+                    }
+            }
+
+            Column(
+                Modifier
+                    .fillMaxSize()
+                    .padding(innerPadding)
+                    .padding(12.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Text(
+                    SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault()).format(Date(s.session.date)),
+                    style = MaterialTheme.typography.bodyMedium
+                )
+                Text("${s.sets.size} sets", style = MaterialTheme.typography.bodyMedium)
+
+                Divider()
+
+                LazyColumn(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                    items(grouped) { row ->
+                        ListItem(
+                            headlineContent = { Text(row.exerciseName) },
+                            supportingContent = {
+                                Text("${row.reps} × ${row.weight} kg  •  Series: ${row.count}")
+                            }
+                        )
+                        Divider()
+                    }
                 }
             }
         }
     }
 }
+
+private data class GroupedRow(
+    val exerciseName: String,
+    val reps: Int,
+    val weight: Double,
+    val count: Int
+)

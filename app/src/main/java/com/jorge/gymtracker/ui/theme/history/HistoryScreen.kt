@@ -4,142 +4,58 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.ListItem
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarHost
-import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import com.jorge.gymtracker.data.entity.WorkoutSessionEntity
+import com.jorge.gymtracker.data.db.AppDb
+import com.jorge.gymtracker.data.entity.SessionWithSets
 import com.jorge.gymtracker.data.repository.WorkoutRepository
-import kotlinx.coroutines.launch
+import com.jorge.gymtracker.domain.PRService      // ✅ import correcto
 import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
+import java.util.*
 
 @Composable
-fun HistoryScreen(navController: NavController? = null) {
+fun HistoryScreen(
+    onOpenSession: (Long) -> Unit = {}
+) {
     val ctx = LocalContext.current
-    val repo = remember { WorkoutRepository(ctx) }
-    val scope = rememberCoroutineScope()
+    val db = remember { AppDb.get(ctx) }
+    val prService = remember { PRService(db.workoutDao(), db.personalRecordDao(), db.progressionRuleDao()) }
+    val workoutRepo = remember { WorkoutRepository(ctx, prService) }
 
-    var sessions by remember { mutableStateOf(listOf<WorkoutSessionEntity>()) }
-    var sessionToDelete by remember { mutableStateOf<WorkoutSessionEntity?>(null) }
-    val snackbarHostState = remember { SnackbarHostState() }
+    var sessions by remember { mutableStateOf<List<SessionWithSets>>(emptyList()) }
 
     LaunchedEffect(Unit) {
-        // getHistoryWithSets() devuelve sesiones con sets; aquí sólo queremos la cabecera
-        sessions = repo.getHistoryWithSets().map { it.session }
+        sessions = workoutRepo.getHistoryWithSets()
     }
 
-    Scaffold(
-        snackbarHost = { SnackbarHost(snackbarHostState) }
-    ) { innerPadding ->
-        Column(
+    Scaffold { innerPadding ->
+        LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .padding(16.dp)
+                .padding(12.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(12.dp)
-            ) {
-                IconButton(onClick = { navController?.navigateUp() }) {
-                    Icon(Icons.Filled.ArrowBack, contentDescription = "Volver")
-                }
-                Text("Historial de entrenamientos", style = MaterialTheme.typography.headlineSmall)
-            }
-
-            Spacer(Modifier.height(12.dp))
-
-            if (sessions.isEmpty()) {
-                Text("No hay sesiones registradas aún.")
-            } else {
-                LazyColumn(
-                    verticalArrangement = Arrangement.spacedBy(12.dp),
-                    modifier = Modifier.fillMaxSize()
+            items(sessions) { s ->
+                ElevatedCard(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { onOpenSession(s.session.id) }
                 ) {
-                    items(sessions) { session ->
-                        SessionRow(
-                            session = session,
-                            onClick = { navController?.navigate("sessionDetail/${session.id}") },
-                            onDelete = { sessionToDelete = session }
+                    Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                        Text(s.session.title, style = MaterialTheme.typography.titleMedium)
+                        Text(
+                            SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
+                                .format(Date(s.session.date)),
+                            style = MaterialTheme.typography.bodySmall
                         )
+                        Text("${s.sets.size} sets", style = MaterialTheme.typography.bodySmall)
                     }
                 }
             }
         }
-    }
-
-    //  Diálogo de confirmación de borrado (llamadas suspend dentro de coroutine)
-    sessionToDelete?.let { session ->
-        AlertDialog(
-            onDismissRequest = { sessionToDelete = null },
-            title = { Text("Eliminar sesión") },
-            text = { Text("¿Estás seguro de que quieres borrar esta sesión de forma permanente? Esta acción no se puede deshacer.") },
-            confirmButton = {
-                TextButton(onClick = {
-                    scope.launch {
-                        repo.deleteSession(session.id)
-                        sessions = repo.getHistoryWithSets().map { it.session }
-                        snackbarHostState.showSnackbar("Sesión eliminada")
-                        sessionToDelete = null
-                    }
-                }) {
-                    Text("Confirmar")
-                }
-            },
-            dismissButton = {
-                TextButton(onClick = { sessionToDelete = null }) {
-                    Text("Cancelar")
-                }
-            }
-        )
-    }
-}
-
-@Composable
-fun SessionRow(
-    session: WorkoutSessionEntity,
-    onClick: () -> Unit,
-    onDelete: () -> Unit
-) {
-    androidx.compose.material3.ElevatedCard(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable { onClick() }
-    ) {
-        ListItem(
-            headlineContent = { Text(session.title) },
-            supportingContent = {
-                val sdf = SimpleDateFormat("dd MMM yyyy - HH:mm", Locale.getDefault())
-                Text(sdf.format(Date(session.date)))
-            },
-            trailingContent = {
-                IconButton(onClick = { onDelete() }) {
-                    Icon(Icons.Filled.Delete, contentDescription = "Eliminar")
-                }
-            }
-        )
     }
 }

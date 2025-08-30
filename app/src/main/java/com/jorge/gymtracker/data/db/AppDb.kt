@@ -7,25 +7,38 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.jorge.gymtracker.data.dao.ExerciseDao
 import com.jorge.gymtracker.data.dao.WorkoutDao
+import com.jorge.gymtracker.data.dao.PersonalRecordDao
+import com.jorge.gymtracker.data.dao.ProgressionRuleDao
 import com.jorge.gymtracker.data.entity.ExerciseEntity
 import com.jorge.gymtracker.data.entity.WorkoutSessionEntity
 import com.jorge.gymtracker.data.entity.WorkoutSetEntity
+import com.jorge.gymtracker.data.entity.PersonalRecordEntity
+import com.jorge.gymtracker.data.entity.ProgressionRuleEntity
 
+/**
+ * Base de datos Room principal.
+ * Asegúrate de que PersonalRecordEntity y ProgressionRuleEntity existen
+ * en el paquete com.jorge.gymtracker.data.entity.
+ */
 @Database(
     entities = [
         ExerciseEntity::class,
         WorkoutSessionEntity::class,
-        WorkoutSetEntity::class
+        WorkoutSetEntity::class,
+        PersonalRecordEntity::class,
+        ProgressionRuleEntity::class
     ],
-    version = 4,
+    version = 5,
     exportSchema = false
 )
-@TypeConverters(Converters::class)   // ⬅️ añadimos los conversores
+@TypeConverters(Converters::class)
 abstract class AppDb : RoomDatabase() {
 
     // DAOs
     abstract fun exerciseDao(): ExerciseDao
     abstract fun workoutDao(): WorkoutDao
+    abstract fun personalRecordDao(): PersonalRecordDao
+    abstract fun progressionRuleDao(): ProgressionRuleDao
 
     companion object {
         @Volatile
@@ -38,7 +51,7 @@ abstract class AppDb : RoomDatabase() {
                     AppDb::class.java,
                     "app.db"
                 )
-                    // ⚠️ Destruye y recrea la DB si cambia el esquema (útil durante desarrollo)
+                    // Durante desarrollo: recrea DB si cambia el esquema
                     .fallbackToDestructiveMigration()
                     .build()
                     .also { INSTANCE = it }

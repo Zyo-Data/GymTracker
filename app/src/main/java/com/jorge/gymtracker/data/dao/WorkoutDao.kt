@@ -33,5 +33,8 @@ interface WorkoutDao {
         deleteSetsBySessionId(sessionId)
         deleteSession(sessionId)
     }
+    @Query("SELECT * FROM workout_set WHERE exerciseId = :exerciseId ORDER BY id DESC LIMIT :limit")
+    suspend fun getLastSetsForExercise(exerciseId: Int, limit: Int): List<WorkoutSetEntity>
+
 
 }
